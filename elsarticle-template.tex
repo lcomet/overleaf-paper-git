@@ -388,11 +388,14 @@ In the guideline \textit{‘How are publisher and contact point modelled?’}\fo
 \caption{Use of mandatory properties of the class Dataset in the EDP}
 \end{figure}
 
-Use of dct:identifier and adms:identifier
-
+\textbf{Use of dct:identifier and adms:identifier}
+\\
+\\
 DCAT-AP foresees two optional properties for identifying a dataset, \textit{dct:identifier} and \textit{adms:identifier}. While the first one is described as the main unique identifier, e.g. a URI, the second property is provided as a secondary identifier. In practice, the second is used in 100\% of the cases by the EDP itself while the first is in some cases provided by the catalogue of datasets harvested. In most of the cases assessed, the \textit{dct:identifier} follows the same format as the \textit{adms:identifier}. This tends to confirm that the EDP provides a \textit{dct:identifier }and a dataset URI for all the datasets which do not have one already.
-
-Use of dct:spatial
+\\
+\textbf{Use of dct:spatial}
+\\
+\\
 DCAT-AP mandates to use controlled vocabularies for the property \textit{dct:spatial}, independently from the class Dataset or Catalogue, for named places. The list of controlled vocabularies is:
 
 \begin{itemize}
@@ -448,7 +451,9 @@ A similar query was run for the class \textit{dcat:Catalog}. The spatial propert
 \caption{Use of dct:spatial for the class dcat:Catalog}
 \end{longtable}
 
-Use of dct:accrualPeriodicity
+\textbf{Use of dct:accrualPeriodicity}
+\\
+\\
 We analysed the use of the property \textit{dct:accrualPeriodicity} which indicates the frequency at which a dataset updated by its owner. From the different periodicities with their use, the most used frequencies are visualised below:
 
 \begin{figure}[!h]
@@ -457,22 +462,28 @@ We analysed the use of the property \textit{dct:accrualPeriodicity} which indica
 \end{figure}
 
 Daily, continuously, monthly and annually represent the most used frequency for updating datasets. One important point to notice concerns the quantity of duplicated frequencies, e.g. IRREG and IRREGULAR. For example, some datasets are described using the authority code (i.e. IRREG) provided by the frequency authority list from the Publications Office\footnote{\href{ http://publications.europa.eu/mdr/resource/authority/frequency/html/frequencies-eng.html }{   http://publications.europa.eu/mdr/resource/authority/frequency/html/frequencies-eng.html }} while other datasets use the label from the same authority list (i.e. IRREGULAR). 
-
-52\% of the datasets provide a provenance
+\\
+\\
+\textbf{52\% of the datasets provide a provenance
+}\\
+\\
 The provenance is supposed to be used as for providing a statement about the lineage of a dataset. In a guideline on how to model and express provenance\footnote{\href{  https://joinup.ec.europa.eu/release/dcat-ap-how-model-and-express-provenance}{  https://joinup.ec.europa.eu/release/dcat-ap-how-model-and-express-provenance}}, the following recommendation was made: \textit{‘As the provision of provenance information is not wide-spread and information in free text does not allow further processing, the usefulness of such information in (international) harvesting is questionable and the information may be ignored. Local implementations are of course free to provide provenance information satisfying local requirements.’ }However, the guideline recognises the potential of such information: \textit{‘It could support credibility of a dataset to know which organisation created the metadata for it in the first place and how the description was modified along a chain of exchanges.’}
 
 In practice, the different uses of provenance specified above were observed which demonstrates the fact that the use of this property is not standardised. For example, a dataset\footnote{\href{  https://www.europeandataportal.eu/data/dataset/00dfaddf-f2f0-487a-b28e-aad53a318521}{   https://www.europeandataportal.eu/data/dataset/00dfaddf-f2f0-487a-b28e-aad53a318521}} describes the provenance by mentioning the context and the organisation responsible for the creation of the dataset (translation from Dutch): \textit{‘Label: This map was established on the basis of an inventory during the establishment of the provincial policy for recreational and professional use of waterways.’}
 Moreover, the provenance is also used to keep track of the modifications applied to a dataset. One example is \url{https://www.europeandataportal.eu/data/dataset/de-pangaea-dataset864016} with: \textit{‘Label: The data set was checked for completeness, correctness, and consistency of metainformation. Validity of used methods was checked and - if applicable - precision and range of data.’}
 Consequently, we would recommend keeping the existing guideline, as it is still relevant.
-
-dcat:Distribution
+\\
+\\
+\textbf{\textit{dcat:Distribution}}
 
 \begin{figure}[!h]
 \includegraphics{replace23.png}
 \caption{Use of mandatory properties of the class Distribution in the EDP}
 \end{figure}
 
-Relationship between accessURL, downloadURL and Distributions
+\textbf{Relationship between accessURL, downloadURL and Distributions}
+\\
+\\
 As the figure above shows, almost all distributions respect the mandatory property \textit{dcat:accessURL}. There was no case for which a distribution had no \textit{accessURL} and no \textit{downloadURL}.
 
 We also looked at the use of the two properties combined, to confirm if this use is differentiated or not. In practice, 16.866 distributions queried have different URLs for access and download while 253.006 distributions\footnote{The number of distributions using downloadURL is slightly different than in the percentage of the visual below (optional property dcat:downloadURL) due of the time gap between queries.}  have the same URL. This shows that the high majority of the distributions using the two properties do not provide different information for both properties but simply copy twice a downloadURL, as explained in the guideline ‘How to use accessURL and downloadURL?’\footnote{\href{   https://joinup.ec.europa.eu/release/how-use-accessurl-and-downloadurl }{   https://joinup.ec.europa.eu/release/how-use-accessurl-and-downloadurl }}.
@@ -482,7 +493,9 @@ We also looked at the use of the two properties combined, to confirm if this use
 \caption{Use of recommended properties of the class Distribution in the EDP}
 \end{figure}
 
-Use of licences
+\textbf{Use of licences}
+\\
+\\
 Only 27.86\% of the distributions have a licence property defined. This can be a barrier for the reuse of the open data, as many potential users might not take the risk of using distributions without knowing under which conditions they can do it. The EDP also adds that 90\% of the licences of the datasets on the portal are unknown\footnote{\href{    https://www.europeandataportal.eu/mqa-service/en}{ https://www.europeandataportal.eu/mqa-service/en }}. The portal considers a licence as unknown if it is not part of the list of licences provided by CKAN\footnote{\href{     https://www.europeandataportal.eu/en/licence-assistant}{ https://www.europeandataportal.eu/en/licence-assistant }}. Using known licences for the datasets would greatly simplify the work required for potential users before deciding if they can use specific datasets or not.
 In general, we also found that the distributions providing a known licence are compliant with the guideline on \textit{‘How to refer to licence documents and licence URIs?’}\footnote{\href{https://joinup.ec.europa.eu/release/dcat-ap-how-refer-licence-documents-and-licence-uris}{  https://joinup.ec.europa.eu/release/dcat-ap-how-refer-licence-documents-and-licence-uris}}. The guideline specifies that licences should always be identified with URIs which should resolve to the description of the licence.
 
@@ -491,9 +504,10 @@ In general, we also found that the distributions providing a known licence are c
 \caption{Use of optional properties of the class Distribution in the EDP}
 \end{figure}
 
-Relationship between dct:title, dct:format and dcat:mediaType
+\textbf{Relationship between dct:title, dct:format and dcat:mediaType}
+\\
+\\
 DCAT-AP recommends to use:
-
 \begin{itemize}
 \item \textit{dct:format} to give information about the file format of the distribution;
 \item \textit{dcat:mediaType}, as a subproperty of dct:format, to follow the official register of media types managed by IANA\footnote{\href{ https://www.iana.org/assignments/media-types/media-types.xhtml}{   https://www.iana.org/assignments/media-types/media-types.xhtml}}; and
@@ -505,8 +519,11 @@ However, our analysis proved that many distributions do the opposite: \textit{dc
 Despite this misuse, when looking at the combined use of \textit{dct:title} and \textit{dcat:mediaType}, most of the distributions observed use appropriately the two properties: \textit{dct:title} as a name for the distribution and \textit{dcat:mediaType} with a value from IANA.
 
 Some members of the DCAT-AP community have expressed a preference to use only \textit{dct:format} with IANA media type. One reason for using IANA media types, is that you can express the \textit{innerMimeType} for Zip-Files. On the other hand, \textit{dct:format} is more flexible. Even though IANA does not include all geospatial values, they can be added to the OP list (\textit{dct:format}). Chapter 4.2 goes deeper in the analysis of the controlled vocabularies for \textit{dct:format} and \textit{dcat:mediaType}. 
-
-dcat:CatalogRecord
+\\
+\\
+\textbf{\textit{dcat:CatalogRecord}}
+\\
+\\
 DCAT-AP defines the class Catalog Record as \textit{‘a description of a dataset’s entry in the catalogue’}. The analysis shows a 100\% use of mandatory properties and recommended properties\textit{ dct:issued }and \textit{adms:status}. Other properties are not used at Catalogue Record level.
 
 \subsection{Analysis of controlled vocabulary use on the European Data Portal}
@@ -574,20 +591,28 @@ The table below summarises the findings for the different properties supposedly 
 \caption{Number of errors found per property using controlled vocabularies }
 \end{longtable}
 
-dct:language on dcat:Dataset
-
+\textbf{\textit{dct:language on dcat:Dataset}}
+\\
+\\
 The property \textit{dct:language} for the class \textit{dcat:Dataset} is used to indicate a language for a dataset. DCAT-AP requests implementers to provide a value from the MDR Languages Named Authority List\footnote{\href{   http://publications.europa.eu/mdr/authority/language/}{    http://publications.europa.eu/mdr/authority/language/}} such as \\
 \textit{$<$http://publications.europa.eu/resource/ authority/language/ENG$>$} for English. In our sample, only one catalogue uses \textit{dct:language} for the class Dataset pointing correctly to the MDR Languages Named Authority List. The other catalogues are not specifying the language for the class \textit{dcat:Dataset}.
-
-dct:accrualPeriodicity on dcat:Dataset
-
+\\
+\\
+\textbf{\textit{dct:accrualPeriodicity on dcat:Dataset}}
+\\
+\\
 Similarly, the property \textit{dct:accrualPeriodicity} is used to refer to the frequency at which the Dataset is updated. DCAT-AP requests to use the MDR Frequency Named Authority List\footnote{\href{    http://publications.europa.eu/mdr/authority/frequency}{     http://publications.europa.eu/mdr/authority/frequency}} , for example with a URI value as follows: \textit{$<$http://publications.europa.eu/resource/authority/frequency/ANNUAL$>$}. Among the 6 catalogues analysed, a single one provided information about the frequency of update, providing the correct value from the MDR Frequency Named Authority List.
-
-dcat:theme on dcat:Dataset
+\\
+\\
+\textbf{\textit{dcat:theme on dcat:Dataset}}
+\\
+\\
 The property \textit{dcat:theme }refers to a category of the Dataset. A Dataset may be associated with multiple themes. As for the previous properties, a Controlled Vocabulary must be followed, the MDR data theme Named Authority List\footnote{\href{     http://publications.europa.eu/mdr/resource/authority/data-theme/html/data-theme-eng.html}{      http://publications.europa.eu/mdr/resource/authority/data-theme/html/data-theme-eng.html}}  with a URI pointing to one authority code from the list. From our sample analysis, the Controlled Vocabulary is perfectly used by all 6 catalogues.
-
-dct:publisher on dcat:Dataset and dcat:Catalog
-
+\\
+\\
+\textbf{\textit{dct:publisher on dcat:Dataset and dcat:Catalog
+}}\\
+\\
 The property \textit{dct:publisher} must follow the MDR Corporate bodies Named Authority List\footnote{\href{      http://publications.europa.eu/mdr/authority/corporate-body/}{       http://publications.europa.eu/mdr/authority/corporate-body/}} for which DCAT-AP specifies that it \textit{“must be used for European institutions and a small set of international organisations. In case of other types of organisations, national, regional or local vocabularies should be used”}\footnote{\href{       https://joinup.ec.europa.eu/release/dcat-ap-v11}{    https://joinup.ec.europa.eu/release/dcat-ap-v11 }}. As data portals can indicate national or subnational publishers, this property could not be verified automatically with the DCAT-AP validator. However, from manual processing, the following conclusions were found:
 
 \begin{itemize}
@@ -596,7 +621,9 @@ The property \textit{dct:publisher} must follow the MDR Corporate bodies Named A
 \item For the class \textit{dcat:Catalog}, all catalogues analysed also provide information about \textit{dct:publisher} using a URI pointing to \textit{foaf:name} and \textit{rdf:type}, therefore not using a Controlled Vocabulary as specified by DCAT-AP.
 \end{itemize}
 
-Wrongly used properties
+\textbf{\textit{Wrongly used properties}}
+\\
+\\
 The following properties were wrongly used by all catalogues in our sample, as explained in the following sections: 
 \begin{itemize}
 \item \textit{dct:format} for \textit{dcat:Distribution};
@@ -606,15 +633,22 @@ The following properties were wrongly used by all catalogues in our sample, as e
 \item dcat:themeTaxonomy for dcat:Catalog.
 \end{itemize}
 
-dct:format on dcat:Distribution
-
+\textbf{\textit{dct:format on dcat:Distribution}}
+\\
+\\
 The \textit{dct:format} property must refer to the MDR File Type Named Authority List\footnote{\href{    http://publications.europa.eu/mdr/authority/file-type/}{        http://publications.europa.eu/mdr/authority/file-type/}} for describing the file format of a distribution. All 6 catalogues have datasets with the property \textit{dct:format}. For all instances identified using \textit{dct:format}, the MDR controlled vocabulary is not followed. Instead, the 
 value gives a URI pointing to an instance of \textit{dct:MediaTypeOrExtent} with the format described as a literal in \textit{rdf:label}, e.g. \textit{“WMS”}.
-
-dcat:mediaType on dcat:Distribution
+\\
+\\
+\textbf{\textit{dcat:mediaType on dcat:Distribution}}
+\\
+\\
 \textit{dcat:mediaType }is a subproperty of \textit{dct:format} used to express the media type of the Distribution as defined in the official register of media types managed by IANA\footnote{\href{     http://www.iana.org/assignments/media-types/media-types.xhtml}{         http://www.iana.org/assignments/media-types/media-types.xhtml}}. Only one catalogue out of 6 uses \textit{dcat:mediaType}. The values provided for the subproperty are almost always correct, with a percentage error of 4\% (55/1365). For the errors identified, a media type not referenced in IANA was used, such as ‘xml/soap’.
-
-dct:spatial on dcat:Dataset and dcat:Catalog
+\\
+\\
+\textbf{\textit{dct:spatial on dcat:Dataset and dcat:Catalog}}
+\\
+\\
 For \textit{dct:spatial} under the class \textit{dcat:Dataset}, multiple Controlled Vocabularies are requested by DCAT-AP, respectively:
 \begin{itemize}
 \item MDR Continents Named Authority List\footnote{\href{http://publications.europa.eu/mdr/authority/continent/
@@ -631,11 +665,17 @@ Among the 4 catalogues expressing \textit{dct:spatial}, two types of inconsisten
 \end{itemize}
 
 The same use is expected from the catalogues for the class \textit{dcat:Catalog}. In the sample, the 6 instances analysed use an acronym (e.g. “XY”) of the country of the catalogue instead of pointing to the MDR Countries Named Authority List or another Controlled Vocabulary listed by DCAT-AP.
-
-adms:status on dcat:CatalogRecord
+\\
+\\
+\textbf{\textit{adms:status on dcat:CatalogRecord}}
+\\
+\\
 The property \textit{adms:status }for the class \textit{dcat:CatalogRecord} refers tothe type of the latest revision of a Dataset's entry in the Catalogue. All the catalogues analysed use it and all the instances of this property, or 5.536, have the value \textit{“:modified”} in place of one from the list provided by DCAT-AP: \textit{:created, :updated, :deleted}. The ratio and the similar value among all the catalogues selected seem to demonstrate the use of this property by the EDP itself and not by the catalogue owners.
-
-dcat:themeTaxonomy on dcat:Catalog
+\\
+\\
+\textbf{\textit{dcat:themeTaxonomy on dcat:Catalog}}
+\\
+\\
 The property \textit{dcat:themeTaxonomy} for the class \textit{dcat:Catalog} follows the same Controlled Vocabulary than \textit{dcat:theme} for the class Dataset. All catalogues in the sample do not appropriately use the property. All of them indicate the correct first part of the URI, \\
 \textit{$<$http://publications.europa.eu/resource/authority/data-theme$>$}, but not the full URI expected with the authoritative code, such as \\ \textit{$<$http://publications.europa.eu/resource/ authority/data-theme/\textbf{AGRI}$>$}. As described in section 3.1, \textit{dcat:themeTaxonomy} is populated by the EDP for all catalogues harvested.
 
