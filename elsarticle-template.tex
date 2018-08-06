@@ -311,8 +311,9 @@ For the class \textit{Distribution}, \textit{spdx:checksum}, \textit{adms:status
 \subsection{Analysis of the use of classes and properties}
 The collection of data was performed on 10/10/2017 following the methodology described in chapter 2. The results of the queries show that the EDP publishes information about 80 catalogues. These catalogues contain all together 743.746 datasets and 982.771 distributions. Each of the following sub-sections gives an overview of the use of the measured occurrence of properties for the DCAT-AP classes: \textit{dcat:Catalog, dcat:Dataset, dcat:Distribution} and \textit{dcat:CatalogRecord}.
 
-dcat:Catalog
-
+\textbf{\textit{dcat:Catalog}}
+\\
+\\
 In DCAT-AP, a \textit{catalogue} is defined as a \textit{‘repository that hosts the datasets being described’}. The use of its properties appears in the figures 13-15 below.
 
 \begin{figure}[!h]
@@ -345,8 +346,9 @@ The recommended properties, dcat:themeTaxonomy and dct:modified were present in 
 Note that this means that even in case national portals do not specify these properties, which happens as we observed in the analysis reported in the previous section, the EDP will present a value.
 Almost all the catalogues (98.75\%) also provide the first harvested date with the property dct:issued, and 23.75\% of the catalogues include a homepage. 
 An important observation concerning the use of the recommended properties \textit{dct:license} and \textit{dct:language} is that no catalogue specified any of the two properties. The observation on the licence is not in contradiction with the usage note of the property \textit{dct:license} in DCAT for Catalogs. The licence attribute on a catalog refers to the licence of the catalog itself, not of the individual datasets nor distributions.\footnote{\href{      https://www.w3.org/TR/vocab-dcat/\#class-catalog}{https://www.w3.org/TR/vocab-dcat/\#class-catalog}} 
-
-dcat:Dataset
+\\
+\\
+\textbf{\textit{dcat:Dataset}}
 \begin{figure}[!h]
 \includegraphics{replace19.png}
 \caption{Use of mandatory properties of the class Dataset in the EDP}
@@ -355,12 +357,15 @@ dcat:Dataset
 \end{figure}
 
 The use of mandatory and recommended properties is shown in the figures above. Some interesting findings from the actual use of classes and properties follow.
-
-dct:description not 100\% used
+\\
+\\
+\textbf{dct:description not 100\% used}
+\\
 
 \textit{dct:description} is a mandatory property, yet it is not used on all datasets. This lack of description concerns 3.54\% of the datasets or 26.328 in total. As titles for datasets are often not self-explanatory, data portal owners are encouraged to complete the use of descriptions to improve the understanding and the discoverability of the datasets.
 
-Relationship between Dataset and Distribution
+\textbf{Relationship between Dataset and Distribution}
+\\
 
 The numbers show that on the EDP, 743.000 datasets have a total of 982.771 distributions. Since a dataset can have several distributions, for example a distribution in CSV format and one in XML, it was expected that the number of distributions would be higher than the number of datasets.
 The analysis however shows that not all datasets have a distribution. Only 51.71\% of datasets have distribution(s) defined. This can be explained by the fact that there are other ways to access the data, for example via \textit{dcat:landingPage} (38.42\%) or \textit{foaf:page} (10.31\%), which is often used for geospatial datasets that are accessed through web APIs, such as mapping services.  We also verified that data publishers were not using multiple properties (distribution, landing page and/or page) for the same dataset. The only overlapping use is really minor as it only concerns 17 datasets having at the same time a \textit{dct:landingPage} and a \textit{foaf:page}.
