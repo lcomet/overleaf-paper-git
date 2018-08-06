@@ -369,9 +369,11 @@ The use of mandatory and recommended properties is shown in the figures above. S
 
 The numbers show that on the EDP, 743.000 datasets have a total of 982.771 distributions. Since a dataset can have several distributions, for example a distribution in CSV format and one in XML, it was expected that the number of distributions would be higher than the number of datasets.
 The analysis however shows that not all datasets have a distribution. Only 51.71\% of datasets have distribution(s) defined. This can be explained by the fact that there are other ways to access the data, for example via \textit{dcat:landingPage} (38.42\%) or \textit{foaf:page} (10.31\%), which is often used for geospatial datasets that are accessed through web APIs, such as mapping services.  We also verified that data publishers were not using multiple properties (distribution, landing page and/or page) for the same dataset. The only overlapping use is really minor as it only concerns 17 datasets having at the same time a \textit{dct:landingPage} and a \textit{foaf:page}.
-
-Relationship between dct:publisher and dcat:contactPoint
-
+\\
+\\
+\textbf{Relationship between dct:publisher and dcat:contactPoint}
+\\
+\\
 In the guideline \textit{‘How are publisher and contact point modelled?’}\footnote{\href{ https://joinup.ec.europa.eu/release/how-are-publisher-and-contact-point-modelled }{ https://joinup.ec.europa.eu/release/how-are-publisher-and-contact-point-modelled }} 
 , the following recommendation is made:
 \textit{‘The way that DCAT and DCAT-AP distinguish between the publisher (the organisation that makes the catalogue or dataset available) and contact information (address where more information can be requested, or feedback can be given) is a continuing source of confusion. It is important to differentiate and provide the two types of information: Publisher is necessary to identify the entity and Contact point allows any person/organisation to communicate and provide feedback.’}
