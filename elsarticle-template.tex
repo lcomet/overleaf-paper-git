@@ -5,6 +5,7 @@
 \usepackage{tabu}
 \usepackage{listings}
 \usepackage[table]{xcolor}
+\usepackage{float}
 
 
 
@@ -101,11 +102,13 @@ To analyse the DCAT-AP use and needs in Europe, we studied two aspects. In the f
 \subsection{Analysis of National Extensions}
 In this part we present the detail information about the analysis of the national extensions. First we review the changes proposed in the formal specification of national profiles. After that, in the second part, we examine the actual use of these extensions.
 
-Regarding the collection of formal specifications, we manually found and collected them from the National DCAT-AP portals shown in Table 1: National DCAT-AP profiles. This had to be done manually as for many portals no directly exportable data formats were available, e.g., a schema file. Moreover, we noticed that even when a formal specification is available as an OWL ontology, there may be still more restrictions in the textual specification. Some of these inconsistencies appear due to limitations in the expressive power of OWL. Some of these inconsistencies appear due to limitations in the expressive power of OWL. Some countries maintain a list of updated, added and deleted properties to DCAT-AP. Others have added additional properties or updates to the standard DCAT-AP, but do not explicitly document the changes, making the change identification a rather tedious task. We created an analysis report by comparing each class and property from the national profiles with the usage notes, cardinality, and status (optional, recommended, or mandatory) in DCAT-AP. From this change analysis report we identified updates in properties’ ranges as well as the removal of properties and classes.
+Regarding the collection of formal specifications, we manually found and collected them from the National DCAT-AP portals shown in Table 1: National DCAT-AP profiles. This had to be done manually as for many portals no directly exportable data formats were available, e.g., a schema file. Moreover, we noticed that even when a formal specification is available as an OWL ontology, there may be still more restrictions in the textual specification. Some of these inconsistencies appear due to limitations in the expressive power of OWL. Some of these inconsistencies appear due to limitations in the expressive power of OWL. Another finding is that even though some countries maintain a list of updated, added and deleted properties to DCAT-AP, others have added additional properties or made updates to the standard DCAT-AP, but did not explicitly document the changes. As a consequence, the change identification was a rather tedious task. 
 
-Before presenting the overall statistics on the property updates, we present a brief overview of the identified changes per country. We also identify and comment properties updated in many extensions, for example language, licensing, media types, and format. Furthermore, we also inspected whether updates are in accordance with the DCAT-AP extension rules. Non-compliant updates are discussed in part 5.4.
+As a result of our investigation, we created an analysis report by comparing each class and property from the national profiles with the usage notes, cardinality, and status (optional, recommended, or mandatory) in DCAT-AP. Moreover, from this change analysis report, we identified updates in properties’ ranges as well as the removal of properties and classes.
 
-We have included in our analysis the application profiles from the national portal in the table below, chosen by the fact that they have published a DCAT-AP specification. 
+Before presenting the overall statistics on the property updates, we present a brief overview of the identified changes per country. In this context, we also identify and comment properties updated in many extensions, for example language, licensing, media types, and format. Furthermore, we also inspect whether updates are in accordance with the DCAT-AP extension rules. As for the non-compliant updates, we discussed them in part 5.4.
+
+In the table below, we show the list of the application profiles from the national portal. Particularly, they were chosen to be included in our analysis by the fact they have published to DCAT-AP specification. 
 \\
 \\
 \\
@@ -130,22 +133,23 @@ We have included in our analysis the application profiles from the national port
 
 	Sweden – VINNOVA, \\Web Address: \url{ https://docs.google.com/document/d/17-vEfZXlu9kykcmjXZo1_Z8QKkr7-Prgwd6YUKLRrjk/edit},(restricted access), \\ Version/Update Date: 2016-06-07\\ \hline
 
-	Switzerland - Open Government Data Switzerland, \\Web Address: \url{ https://handbook.opendata.swiss/en/library/ch-dcat-ap},\\ Version/Update Date: 2016-02-09\\ \hline
-\\    
+	Switzerland - Open Government Data Switzerland, \\Web Address: \url{ https://handbook.opendata.swiss/en/library/ch-dcat-ap},\\ Version/Update Date: 2016-02-09 \\ \hline
+
 \caption{National DCAT-AP profiles}
 \end{longtabu}
 
-Next, we analysed the actual use of DCAT-AP in these portals. This proved more difficult than anticipated. Some of these portals do not provide their metadata in any of the standardized RDF serialization formats, but rather in either a platform specific or own customized format. That was an interesting finding. As we focus on interoperability, we decided to only analyse the portals which provide their metadata in a standardized way. That was the case for Ireland, Norway, Spain, Sweden, and Switzerland. 
+Afterwards, we analysed the actual use of DCAT-AP in these portals. This proved more difficult than anticipated. The main reason of the difficulty was that some of these portals do not provide their metadata in any of the standardized RDF serialization formats, but rather in either a platform specific or own customized format. We consider this fact as an interesting finding. As we focus on interoperability, we decided to only analyse the portals which provide their metadata in a standardized way. As a consequence, we consider the portals of the following countries: Ireland, Norway, Spain, Sweden, and Switzerland.
 
-For these countries, we downloaded the available metadata and measured how often properties on the DCAT-AP Catalog, Dataset, and Distribution are used. To be specific, we measured the fraction of instances which had at least one occurrence of a property. So, when we show the statistic for the \textit{dct:title} property on Dataset, it means that that fraction of the Datasets had at least one value for that property. For DCAT-AP properties which were used by at least one portal on at least 10\% of the instances, we show detailed charts. Other properties are merely listed. Then, for the additional properties used in the respective portals, we also show statistics.
+For these countries, we downloaded the available metadata and measured how often properties on the DCAT-AP Catalog, Dataset, and Distribution are used. To be specific, we measured the fraction of instances which had at least one occurrence of a property. So, when we show the statistic for the \textit{dct:title} property on Dataset, it means that that fraction of the Datasets had at least one value for that property. For DCAT-AP properties which were used by at least one portal on at least 10\% of the instances, we show detailed charts. On the contrary, other properties are merely listed. Then, for the additional properties used in the respective portals, we also show statistics.
 
 \subsection{Analysis of DCAT-AP use via the European Data Portal}
 
-In order to analyse the real use of DCAT-AP classes and properties in the European data Portal (EDP), SPARQL queries were developed and executed on its SPARQL endpoint i.e. \url{https://www.europeandataportal.eu/sparql}. Given the high number of properties to analyse, the creation of queries was semi-automated using a spreadsheet. The queries were also transformed into URLs and results are automatically loaded, as shown in Fig.1. The queries can be used to monitor the DCAT-AP use or similar models on every portal that has a SPARQL endpoint.
+In order to analyse the real use of DCAT-AP classes and properties in the European data Portal (EDP), SPARQL queries were developed and executed on its SPARQL endpoint i.e. \url{https://www.europeandataportal.eu/sparql}. Given the high number of properties to analyse, the creation of queries was semi-automated using a spreadsheet. Moreover, the queries were also transformed into URLs and results were automatically loaded, as shown in Fig.1. Certainly, the queries can be used to monitor the DCAT-AP use or similar models on every portal that has a SPARQL endpoint.
 
 In the example below, we answer to the question ‘how many datasets have a description?’:
-
-\textbf{Class:} dcat:Dataset. \textbf{Property:} dct:description.
+\\
+\\
+\textbf{Class:} dcat:Dataset. \textbf{Property:} dct:description. \\
 \textbf{Query:}
 \begin{lstlisting}
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
@@ -158,20 +162,20 @@ WHERE {
 \end{lstlisting}
 \textbf{Result: 728196}
 
-\begin{figure}[!h]
-\includegraphics{replace1.png}
+\begin{figure}[H]
+\includegraphics[]{replace1.png}
 \caption{SPARQL queries for DCAT-AP}
 \end{figure}
 
-The European Data Portal harvests the metadata from data portals in Europe. These data portals use DCAT-AP in different ways: some are not using DCAT-AP at all, some follow a national DCAT-AP profile and some claim to be fully-compliant with DCAT-AP. The EDP maps these varied uses of DCAT-AP to their own use of DCAT-AP, adding new properties on top of the mappings such as properties under the class \textit{dcat:CatalogRecord}. These mappings and additions influence the analysis conducted in this part of the study. By querying the EDP endpoint, this analysis assesses only partially the use of DCAT-AP for all data portals harvested by the EDP, as some properties and values from national portals might not be harvested.
+The European Data Portal harvests the metadata from data portals in Europe. These data portals use DCAT-AP in different ways: some are not using DCAT-AP at all, some follow a national DCAT-AP profile and some claim to be fully-compliant with DCAT-AP. In this respect, the EDP maps these varied uses of DCAT-AP to their own use of DCAT-AP, adding new properties on top of the mappings such as properties under the class \textit{dcat:CatalogRecord}. Indeed, these mappings and additions influence the analysis conducted in this part of the study. Hence, by querying the EDP endpoint, this analysis assesses only partially the use of DCAT-AP for all data portals harvested by the EDP, as some properties and values from national portals might not be harvested.
 
-The outcomes of this analysis raised a number of questions for the experts of the DCAT-AP working group. These questions were presented and discussed during two webinars on 19/10/2017\footnote{\href{ https://joinup.ec.europa.eu/event/dcat-ap-change-management-release-policy-webinar-19-october-2017-1400-cet}{ https://joinup.ec.europa.eu/event/dcat-ap-change-management-release-policy-webinar-19-october-2017-1400-cet}} and on 08/12/2017\footnote{\href{ https://joinup.ec.europa.eu/event/change-and-release-management-policy-dcat-ap-final-webinar-8-december-2017-1000-cet}{ https://joinup.ec.europa.eu/event/change-and-release-management-policy-dcat-ap-final-webinar-8-december-2017-1000-cet}} .The input received during those webinars is included in the explanations in Chapter 4. In order to further continue the discussion online, topics were created in the DCAT-AP repository on GitHub\footnote{\href{  https://github.com/SEMICeu/DCAT-AP}{  https://github.com/SEMICeu/DCAT-AP}}, where members of the DCAT-AP working group provide their views on the use of different properties and classes and, consequently, on how these elements should be tackled in the next version of DCAT-AP.
+Particularly, the outcomes of this analysis raised a number of questions for the experts of the DCAT-AP working group. These questions were presented and discussed during two webinars on 19/10/2017\footnote{\href{ https://joinup.ec.europa.eu/event/dcat-ap-change-management-release-policy-webinar-19-october-2017-1400-cet}{ https://joinup.ec.europa.eu/event/dcat-ap-change-management-release-policy-webinar-19-october-2017-1400-cet}} and on 08/12/2017\footnote{\href{ https://joinup.ec.europa.eu/event/change-and-release-management-policy-dcat-ap-final-webinar-8-december-2017-1000-cet}{ https://joinup.ec.europa.eu/event/change-and-release-management-policy-dcat-ap-final-webinar-8-december-2017-1000-cet}}. The input received during those webinars is included in the explanations in Chapter 4. Furthermore, in order to further continue the discussion online, topics were created in the DCAT-AP repository on GitHub\footnote{\href{  https://github.com/SEMICeu/DCAT-AP}{  https://github.com/SEMICeu/DCAT-AP}}, where members of the DCAT-AP working group provide their views on the use of different properties and classes and, consequently, on how these elements should be tackled in the next version of DCAT-AP.
 
-Besides the analysis of the use of DCAT-AP classes and properties, a more detailed analysis was conducted for the properties having a controlled vocabulary specified in DCAT-AP. For those properties, a subset of metadata, targeted at large catalogues that use the properties was extracted from the EDP SPARQL endpoint as N-triples. The subset represents 5552 datasets from 6 catalogues harvested by the EDP. For each property supposed to take a value from a controlled vocabulary, two validation checks were done:
+Besides the analysis of the use of DCAT-AP classes and properties, a more detailed analysis was conducted for the properties having a controlled vocabulary specified in DCAT-AP. For those properties, a subset of metadata, targeted at large catalogues that use the properties was extracted from the EDP SPARQL endpoint as N-triples. Specifically, the subset represents 5552 datasets from 6 catalogues harvested by the EDP. For each property supposed to take a value from a controlled vocabulary, two validation checks were done:
 
 \begin{itemize}
-\item Confirm the use/non-use of the properties analysed;
-\item If the property is used, verify if the value is correctly using the controlled vocabulary or not.
+\item confirm the use/non-use of the properties analysed;
+\item if the property is used, verify if the value is correctly using the controlled vocabulary or not.
 \end{itemize}
 
 For the second check, the DCAT-AP validator\footnote{\href{ http://dcat-ap.semic.eu/dcat-ap_validator.html}{ http://dcat-ap.semic.eu/dcat-ap\_validator.html}} was updated to run validation rules on the metadata. The validation rules analysed automatically if properties start with a specific code list URI, such as \url{http://publications.europa.eu/resource/authority/data-theme/} for the property \textit{dcat:theme} or if the URI contains the correct term category for \textit{dcat:mediaType} from the list maintained by IANA\footnote{\href{  https://www.iana.org/assignments/media-types/media-types.xhtml}{https://www.iana.org/assignments/media-types/media-types.xhtml}}: application/, audio/, font/, example/, image/, message/, text/, video/, etc.  For the full overview of properties and code lists analysed, refer to section 4.2. 
