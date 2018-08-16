@@ -201,34 +201,34 @@ The analysis includes the national DCAT-AP extensions for Belgium, Germany, Irel
 In order to better explain the changes made by the national profiles, we briefly describe and highlight below significant changes of each extension.
 
 \begin{enumerate}
-\item \textit{DCAT-AP.be (Belgium):} Even though DCAT-AP.be does not include any additional properties, allows the data producers to add properties. In addition, each literal has a language tag, apparently to cater for the multilingual requirements in the Belgian context. Moreover, used keywords should map to the Data Theme Named Authority List of the Publication Office of the European Union\footnote{\href{http://publications.europa.eu/mdr/authority/data-theme/}{http://publications.europa.eu/mdr/authority/data-theme/}}. Organisations 
+\item \textit{DCAT-AP.be (Belgium):} Even though DCAT-AP.be does not include any additional properties, allows the data producers to add properties. In addition, each literal has a language tag, apparently to cater for the multilingual requirements in the Belgian context. Moreover, used keywords should map to the Data Theme Named Authority List of the Publication Office of the European Union\footnote{\href{http://publications.europa.eu/mdr/authority/data-theme/}{http://publications.europa.eu/mdr/authority/data-theme/}}. Organisations in the metadata
 % * Lina:
 % Which organisations?
 % 
-in the metadata get an IRI which derives from the Belgian national company register. The class CatalogRecord is not used in the Belgian extension.
+get an IRI which derives from the Belgian national company register. The class CatalogRecord is not used in the Belgian extension.
 
 \item \textit{DCAT-AP.de (Germany):} The first version of the German extension of DCAT-AP focuses on copyright, licensing, and law restrictions corresponding to the German context. A second version was announced for 2018.
 
-\item \textit{DCAT-AP (Ireland):} The Irish extension is specified by a data exchange framework, which is based on the DCAT v1.0 profile. The class Dataset is provided with some additional geospatial metadata properties. Some of them have been added to DCAT-AP v.1.1. However, the extension still includes some properties that are not part of DCAT-AP v.1.1
+\item \textit{DCAT-AP (Ireland):} The Irish extension is specified by a data exchange framework, which is based on the DCAT v1.0 profile. Here, the class Dataset is provided with some additional geospatial metadata properties. Some of them have been added to DCAT-AP v.1.1. However, the extension still includes some properties that are not part of DCAT-AP v.1.1.
 
 \item \textit{DCAT-AP\_IT (Italy):} The Italian metadata profile DCAT-AP\_IT focuses on granulating the vCard:Kind class to enhance the information metadata for companies. To do so, the class dcatapit:Organization was introduced as a subclass of vCard:Organization, which is in turn is a subclass of vCard:Kind. Additionally to those changes, dcatapit:Organization provides new properties to describe the contact point’s name, email,  telephone number, and URL (e.g., a homepage). Along with the changes to the class vCard:Kind, several other classes were provided with additional properties.
 
-\item \textit{DCAT-AP-NL (the Netherlands): }The Dutch extension of DCAT-AP is called DCAT-AP-NL and was updated in the June 2017. The classes Dataset, Agent, Catalog, Record and Distribution were updated and include some additional properties like registration holder, language and identifier. 
+\item \textit{DCAT-AP-NL (the Netherlands):} The Dutch extension of DCAT-AP is called DCAT-AP-NL and was updated in the June 2017. The classes Dataset, Agent, Catalog, Record and Distribution were updated and include some additional properties like registration holder, language and identifier. 
 
-\item \textit{DCAT-AP-NO (Norway):} In the Norwegian DCAT-AP extension, most of the changes took place in the class Dataset and Distribution. The extension provides additional subject, creator, and access right comment properties for the class Dataset. Additionally some properties have been added to describe relations between different datasets. The property dcat:mediaType in the class Distribution was excluded, since it was considered to be the same as dct:format. DCAT-AP-NO also provides a new property dct:identifier for the class Agent.
+\item \textit{DCAT-AP-NO (Norway):} In the Norwegian DCAT-AP extension, most of the changes took place in the class Dataset and Distribution. The extension provides additional subject, creator, and access right comment properties for the class Dataset. Additionally some properties have been added in order to describe relations between different datasets. DCAT-AP-NO also provides a new property dct:identifier for the class Agent. On the other hand, the property dcat:mediaType in the class Distribution was excluded, since it was considered to be the same as dct:format. 
 
-\item \textit{DCAT-AP-Spain (Spain):} The Spanish DCAT profile was developed and created before DCAT-AP was published and therefore cannot be seen as real extension of DCAT-AP. Given that, the current Spanish standard includes some legacy features, which could cause some interoperability issues with other extensions. In the scope of this analysis we regard the Spanish profile as an extension and describe the different violations against the DCAT-AP v1.1.
+\item \textit{DCAT-AP-Spain (Spain):} The Spanish DCAT profile was developed and created before DCAT-AP was published and therefore cannot be seen as real extension of DCAT-AP. Given that, the current Spanish standard includes some legacy features, which could cause some interoperability issues with other extensions. In the scope of this analysis we regard the Spanish profile as an extension, in fact, we describe the different violations against the DCAT-AP v1.1.
 
-\item \textit{DCAT-AP-SE (Sweden):} The DCAT-AP-SE extension of DCAT-AP was developed for öppnadata.se, the Swedish national portal for Open Data. One focus of the Swedish extension was licensing. Another focus was on restricting the vCard:Kind class to either vCard:Individual or vCard:Organization. In addition, further contact detail properties were added. 
+\item \textit{DCAT-AP-SE (Sweden):} The DCAT-AP-SE extension of DCAT-AP was developed for öppnadata.se, the Swedish national portal for Open Data. One focus of the Swedish extension was licensing, but also another focus was on restricting the vCard:Kind class to either vCard:Individual or vCard:Organization. In addition, further contact detail properties were added. 
 
-\item \textit{CH-DCAT-AP (Switzerland):} The Swiss extension of DCAT-AP focuses on providing text elements in French, German. Italian and English. It is made mandatory that every text element is provided in each of these languages. 
+\item \textit{CH-DCAT-AP (Switzerland):} The Swiss extension of DCAT-AP focuses on providing text elements in French, German, Italian and English. As a consequence, it is made mandatory that every text element is provided in each of these languages. 
 \end{enumerate}
 
 \subsection{Property changes}
-Adding, changing, or removing properties in extensions is common practice. In this overview we group these updates in mandatory, recommended/optional and exclusions of properties. 
+Hence adding, changing, or removing properties in extensions is common practice. In this overview we group these updates in mandatory, recommended/optional and exclusions of properties. 
 
 \subsubsection{Mandatory changes}
-The mandatory property \textit{dct:identifier} was changed most often. Four extensions changed the property for the class Dataset, two for the class Agent and one in the class Standard. For the class Dataset, \textit{dct:identifier} is an optional property. In that case, all four extensions changed it to mandatory.
+In the context of mandatory properties, \textit{dct:identifier} is a property which was changed most often. Indeed, four extensions changed the property for the class Dataset, while two replace it for the class Agent and one changed it for the class Standard. Furthermore, for the class Dataset, \textit{dct:identifier} is an optional property, but all four extensions changed it to mandatory.
 
 Like \textit{dct:identifier}, the property \textit{dct:publisher} in class Dataset was changed by four extensions. DCAT-AP v1.1 lists \textit{dct:publisher} as a recommended property, while the extensions changed it to mandatory.
 
