@@ -539,7 +539,7 @@ get an IRI which derives from the Belgian national company register. The class \
 \subsection{Property changes}
 Hence adding, changing, or removing properties in extensions is common practice. In this overview we group these updates in mandatory, recommended/optional and exclusions of properties. 
 
-\subsubsection{Mandatory changes}
+\subsubsection{Mandatory changes}	
 In the context of mandatory properties, \textit{dct:identifier} was the one which changed most often. Indeed, four extensions changed the property for the class \textit{Dataset}, while two replace it for the class \textit{Agent} and one for the class \textit{Standard}. Besides, for the class \textit{Dataset}, \textit{dct:identifier} is an optional property, but all four extensions changed it to mandatory.
 
 The property \textit{dct:publisher} in the class \textit{Dataset} was changed by four extensions. Furthermore, while DCAT-AP v1.1 specifies it as a recommended property, the extensions changed it to mandatory.
@@ -575,7 +575,7 @@ In this section, we present the result from measuring the use of properties of t
 
 \subsubsection{Property use in the class Catalog}
 Here on, we present different charts in order to show the specific use of the properties in the class \textit{Catalog}, this for every analysed extension.
-As a reference, the colour code used for the countries is express on Figure 4.
+As a reference, the colour code used for the countries is express on Figure 14.
 
 \begin{figure}[H]
 \includegraphics{replace3.png}
@@ -597,7 +597,7 @@ As a reference, the colour code used for the countries is express on Figure 4.
 \caption{Optional properties in the Catalog class}
 \end{figure}
 
-We observed that for the class \textit{Catalog} all properties were frequently used, as shown in Figure 5 and 6 respectively. However, \textit{dct:hasPart,dct:isPartOf, dcat:record, dct:rights} and \textit{dct:spatial} were not used at all, as exhibited on Figure 7.
+We observed that for the class \textit{Catalog} all properties were frequently used, as shown in Figure 15 and 16 respectively. However, \textit{dct:hasPart,dct:isPartOf, dcat:record, dct:rights} and \textit{dct:spatial} were not used at all, as exhibited on Figure 17.
 
 \subsubsection{Property use in the class Dataset}
 
@@ -618,10 +618,11 @@ We observed that for the class \textit{Catalog} all properties were frequently u
 \caption{Optional properties in the Dataset class}
 \end{figure}
 
-As it is shown in Figure The property \textit{dct:conformsTo} occurred rarely in the Spanish and Swiss data dumps. The Swedish data dump was the only one, that used \textit{dct:isVersionOf, dct:provenance, owl:versionInfo} and \textit{adms:versionNotes}. The properties  \textit{dct:hasVersion, adms:sample, dct:type} were not used at all.
+% Check the images related to descriptions: I don't understand the relation between the text and the images presented from section 4.3.1 to 4.3.3 -- Lina
+
+The property \textit{dct:conformsTo} occurred rarely in the Spanish and Swiss data dumps. Moreover, the Swedish data dump was the only one, that used \textit{dct:isVersionOf, dct:provenance, owl:versionInfo} and \textit{adms:versionNotes}. On the other hand, the properties  \textit{dct:hasVersion, adms:sample, dct:type} were not used at all.
 
 \subsubsection{Property use in the class Distribution}
-For the class \textit{Distribution}, \textit{spdx:checksum}, \textit{adms:status} were used by none of the portals. The property \textit{foaf:page} rarely occurred in the Swedish data dump.
 
 \begin{figure}[H]
 \includegraphics{replace12.png}
@@ -639,7 +640,7 @@ For the class \textit{Distribution}, \textit{spdx:checksum}, \textit{adms:status
 \caption{Optional properties in the Distribution class}
 \end{figure}
 
-
+For the class \textit{Distribution}, \textit{spdx:checksum}, \textit{adms:status} were used by none of the portals. Furthemore, the property \textit{foaf:page} rarely occurred in the Swedish data dump.
 
 \section{Discussion}
 We organise the discussion part based on the major findings we had from our analysis. More specifically we discuss the language support, the licensing metadata, the identified non-conformant changes, coverage for geospatial properties, and the relationship properties between Catalogues, Datasets, and Distributions.
