@@ -375,7 +375,7 @@ DCAT-AP defines the class Catalogue Record as \textit{‘a description of a data
 \subsection{Analysis of controlled vocabulary use on the European Data Portal} \label{VocabularyAnalysis}
 In DCAT-AP version 1.1, 15 properties are expected to use controlled vocabularies as summarised in table 4: 
 
-\begin{longtable}{*8l}
+\begin{longtabu} to \textwidth {|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{5cm}|}
 \rowcolor{blue!90}
 \textcolor{white}{\textbf{Property}} & \textcolor{white}{\textbf{Class}} & \textcolor{white}{\textbf{Used on the EDP?}} & \textcolor{white}{\textbf{Controlled Vocabulary}} \\ \hline
 \rowcolor{gray!10} dct:language&Dataset &Yes &MDR Languages Named Authority List\footnote{http://publications.europa.eu/mdr/authority/language/} \\ \hline
@@ -386,17 +386,17 @@ In DCAT-AP version 1.1, 15 properties are expected to use controlled vocabularie
 \rowcolor{gray!10} dct:format&Distribution &Yes &MDR File Type Named Authority List\footnote{http://publications.europa.eu/mdr/authority/file-type/}\\ \hline
 \rowcolor{gray!10} dcat:mediaType&Distribution &Yes &IANA Media Types\footnote{https://www.iana.org/assignments/media-types/media-types.xhtml} \\ \hline
 \rowcolor{gray!10} dct:spatial&Dataset &Yes &MDR Continents Named Authority List\footnote{http://publications.europa.eu/mdr/authority/continent/}, MDR Countries Named Authority List\footnote{http://publications.europa.eu/mdr/authority/country/}, MDR Places Named Authority List\footnote{http://publications.europa.eu/mdr/authority/place/}, Geonames\footnote{http://sws.geonames.org/} \\ \hline
-\rowcolor{gray!10} dct:spatial&Catalog &Yes &MDR Continents Named Authority Lis , MDR Countries Named Authority List, MDR Places Named Authority List, Geonames \\ \hline
+\rowcolor{gray!10} dct:spatial&Catalog &Yes &MDR Continents Named Authority List, MDR Countries Named Authority List, MDR Places Named Authority List, Geonames \\ \hline
 \rowcolor{gray!10} adms:status&CatalogRecord &Yes &ADMS change type vocabulary\footnote{The MDR Change Type Vocabulary was never created. This issue has been reported to the editors of DCAT-AP (https://github.com/SEMICeu/DCAT-AP/issues/45) and will be addressed in the next version.} \\ \hline
 \rowcolor{gray!10} dcat:themeTaxonomy&Catalog &Yes &MDR Dataset Theme Vocabulary \\ \hline
 \rowcolor{gray!10} dct:language &Catalog &No &MDR Languages Named Authority List \\ \hline
 \rowcolor{gray!10} adms:status &Distribution &No &ADMS status vocabulary\footnote{http://purl.org/adms/status/1.0} \\ \hline
 \rowcolor{gray!10} dct:type &Agent &No &ADMS publisher type vocabulary\footnote{http://purl.org/adms/publishertype/1.0} \\ \hline
-\rowcolor{gray!10} dct:type &LicenseDocument &No &ADMS licence type vocabulary\footnote{http://purl.org/adms/licencetype/1.0} \\ \hline
-
-\\ 
+\rowcolor{gray!10} dct:type &LicenseDocument &No &ADMS licence type vocabulary\footnote{http://purl.org/adms/licencetype/1.0} 
+\\ \hline
 \caption{Comparison between the list of properties supposedly using Controlled Vocabularies and the lists of properties present on the EDP}
-\end{longtable}
+
+\end{longtabu}
 
 The 4 properties not used on the EDP are not analysed in this chapter but have dedicated descriptions in section \ref{EDPUse}:
 
@@ -539,7 +539,7 @@ get an IRI which derives from the Belgian national company register. The class \
 \subsection{Property changes}
 Hence adding, changing, or removing properties in extensions is common practice. In this overview we group these updates in mandatory, recommended/optional and exclusions of properties. 
 
-\subsubsection{Mandatory changes}	
+\subsubsection{Mandatory changes}
 In the context of mandatory properties, \textit{dct:identifier} was the one which changed most often. Indeed, four extensions changed the property for the class \textit{Dataset}, while two replace it for the class \textit{Agent} and one for the class \textit{Standard}. Besides, for the class \textit{Dataset}, \textit{dct:identifier} is an optional property, but all four extensions changed it to mandatory.
 
 The property \textit{dct:publisher} in the class \textit{Dataset} was changed by four extensions. Furthermore, while DCAT-AP v1.1 specifies it as a recommended property, the extensions changed it to mandatory.
