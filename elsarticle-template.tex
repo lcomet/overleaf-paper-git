@@ -10,6 +10,53 @@
 
 \usepackage{hyperref}
 
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.13,
+stacked style/.style = {
+    xbar stacked, ytick=data, axis y line*=none, axis x line*=none, axis x line=none, xtick={0,100},
+    width=.9\textwidth,
+    bar width=6mm,
+    xmin=0,
+    xmax=100,
+    y=8mm,
+    enlarge y limits={abs=0.625},
+    nodes near coords= {\pgfmathprintnumber\pgfplotspointmeta\space\%},
+    nodes near coords style={text=black, at ={(0,\pgfplotspointy)},anchor=west, /pgf/number format/.cd,fixed ,precision=2},
+    visualization depends on=y \as \pgfplotspointy,
+    every axis plot/.append style={fill}},
+default style/.style={
+xbar, ytick=data, axis y line*=none, axis x line*=none, axis x line=none, xtick={0,100},
+    width=.9\textwidth,
+    bar width=2mm,
+    xmin=0,
+    xmax=100,
+    tickwidth= 0pt,
+    y=18mm,
+    enlarge y limits={abs=0.625},
+    nodes near coords= {\pgfmathprintnumber\pgfplotspointmeta\space\%},
+    nodes near coords style={text=black, scale=0.7, /pgf/number format/.cd,fixed ,precision=2},
+    every axis plot/.append style={fill}
+}}
+
+\definecolor{red}{HTML}{DFBBB9}
+\definecolor{orange}{HTML}{FDAE61}
+\definecolor{teal}{HTML}{BFDDE7}
+\definecolor{blue}{HTML}{96B3DF}
+\definecolor{orange}{HTML}{FCD5B5}
+
+%\definecolor{ireland}{HTML}{CF4A72}
+%\definecolor{norway}{HTML}{FFAA43}
+%\definecolor{spain}{HTML}{D191CC}
+%\definecolor{sweden}{HTML}{8695DE}
+%\definecolor{switzerland}{HTML}{76BA69}
+
+\definecolor{ireland}{HTML}{3366cc}
+\definecolor{norway}{HTML}{dc3912}
+\definecolor{spain}{HTML}{ff9900}
+\definecolor{sweden}{HTML}{1f9d27}
+\definecolor{switzerland}{HTML}{ae36ae}
+
 \modulolinenumbers[5]
 
 \journal{Journal of \LaTeX\ Templates}
@@ -210,11 +257,42 @@ The collection of data was performed on 10/10/2017 following the methodology des
 In DCAT-AP, a \textit{catalogue} is defined as a \textit{‘repository that hosts the datasets being described’}. The use of its mandatory, recommended and optional properties appear in the figures 13 to 15.
 
 \begin{figure}[H]
-\includegraphics{replace16.png}
+\begin{tikzpicture}
+  \begin{axis}[stacked style,
+      yticklabels={{dct:dataset}, {dct:description}, {dct:publisher}, {dct:title}}]
+  \addplot[teal] coordinates {(95,0) (0,1) (0,2) (0,3)};
+  \addplot[teal] coordinates {(0,0) (97.5,1) (0,2) (0,3)};
+  \addplot[teal] coordinates {(0,0) (0,1) (96.25,2) (0,3)};
+  \addplot[teal] coordinates {(0,0) (0,1) (0,2) (100,3)};
+  \end{axis}  
+\end{tikzpicture}
 \caption{Use of mandatory properties of the class Catalog in the EDP}
-\includegraphics{replace17.png}
+\begin{tikzpicture}
+  \begin{axis}[
+      stacked style,
+      yticklabels={{dct:language}, {dct:license}, {dct:homepage}, {dct:issued}, {dct:themeTaxonomy}, {dct:modified}}
+      ]
+    \addplot[blue] coordinates {(0.001,0) (0,1) (0,2) (0,3) (0,4) (0,5)};
+    \addplot[blue] coordinates {(0,0) (0.001,1) (0,2) (0,3) (0,4) (0,5)};
+    \addplot[blue] coordinates {(0,0) (0,1) (23.75,2) (0,3) (0,4) (0,5)};
+    \addplot[blue] coordinates {(0,0) (0,1) (0,2) (98.75,3) (0,4) (0,5)};
+    \addplot[blue] coordinates {(0,0) (0,1) (0,2) (0,3) (100,4) (0,5)};
+    \addplot[blue] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (100,5)};
+  \end{axis}  
+\end{tikzpicture}
 \caption{Use of recommended properties of the class Catalog in the EDP}
-\includegraphics{replace18.png}
+\begin{tikzpicture}
+  \begin{axis}[
+      stacked style,
+      yticklabels={{dct:hasPart}, {dct:isPartOf}, {dct:rights}, {dct:spatial}, {dct:record}}
+      ]
+    \addplot[red] coordinates {(0.001,0) (0,1) (0,2) (0,3) (0,4)};
+    \addplot[red] coordinates {(0,0) (0.001,1) (0,2) (0,3) (0,4)};
+    \addplot[red] coordinates {(0,0) (0,1) (0.001,2) (0,3) (0,4)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (83.75,3) (0,4)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (97.5,4)};
+  \end{axis}  
+\end{tikzpicture}
 \caption{Use of optional properties of the class Catalog in the EDP}
 \end{figure}
 
@@ -232,9 +310,28 @@ An important observation concerning the use of the recommended properties \texti
 
 Figures 16 and 17 present the use of mandatory and recommended properties on the \textit{dcat:Dataset} class. The findings are further described below the figures.
 \begin{figure}[H]
-\includegraphics{replace19.png}
+\begin{tikzpicture}
+  \begin{axis}[
+      stacked style,
+      yticklabels={{dct:description}, {dct:title}}
+      ]
+    \addplot[teal] coordinates {(96.46,0) (0,1)};
+    \addplot[teal] coordinates {(0,0) (100,1)};
+  \end{axis}  
+\end{tikzpicture}
 \caption{Use of mandatory properties of the class Dataset in the EDP}
-\includegraphics{replace20.png}
+\begin{tikzpicture}
+  \begin{axis}[
+      stacked style,
+      yticklabels={{dct:publisher}, {dct:contactPoint}, {dct:distribution}, {dct:theme}, {dct:keyword}}
+      ]
+    \addplot[blue] coordinates {(43.85,0) (0,1) (0,2) (0,3) (0,4)};
+    \addplot[blue] coordinates {(0,0) (45.44,1) (0,2) (0,3) (0,4)};
+    \addplot[blue] coordinates {(0,0) (0,1) (51.71,2) (0,3) (0,4)};
+    \addplot[blue] coordinates {(0,0) (0,1) (0,2) (59.94,3) (0,4)};
+    \addplot[blue] coordinates {(0,0) (0,1) (0,2) (0,3) (94.24,4)};
+  \end{axis}  
+\end{tikzpicture}
 \caption{Use of recommended properties of the class Dataset in the EDP}
 \end{figure}
 
@@ -256,7 +353,34 @@ As visualised in figure 17, the two properties \textit{dct:publisher} and \texti
 Figure 18 introduces the use of optional properties for the Dataset class. The results are further described in the paragraphs below.
 \\
 \begin{figure}[H]
-\includegraphics{replace21.png}
+\begin{tikzpicture}
+  \begin{axis}[
+      stacked style,
+      yticklabels={{owl:versionInfo}, {dct:type}, {dct:source}, {dct:relation}, {dct:isVersionOf}, {dct:hasVersion}, {dct:accessRights}, {adms:versionNotes}, {adms:sample}, {dct:conformsTo}, {foaf:page}, {dct:temporal}, {dcat:landingPage}, {dct:issued}, {dct:accrualPeriodicity}, {dct:language}, {dct:provenance}, {dct:modified}, {dct:spatial}, {dct:identifier}, {adms:identifier}}
+      ]
+    \addplot[red] coordinates {(0.001,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0.001,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0.001,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0.001,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0.001,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0.001,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0.001,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0.001,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0.001,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (9.05,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (10.31,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (22.24,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (38.42,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (40.77,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (44.98,14) (0,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (50.98,15) (0,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (52.66,16) (0,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (74.34,17) (0,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (76.69,18) (0,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (99.98,19) (0,20)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11) (0,12) (0,13) (0,14) (0,15) (0,16) (0,17) (0,18) (0,19) (100,20)};
+  \end{axis}  
+\end{tikzpicture}
 \caption{Use of optional properties of the class Dataset in the EDP}
 \end{figure}
 
@@ -324,7 +448,27 @@ The property \textit{dct:accrualPeriodicity} indicates the frequency at which a 
 \\
 \\
 \begin{figure}[H]
-\includegraphics{replace22.png}
+\begin{tikzpicture}
+  \begin{axis}[
+      stacked style,
+      xmin=0,
+      xmax=69754,
+      nodes near coords= {\pgfmathprintnumber\pgfplotspointmeta\space},
+      yticklabels={{asNeeded}, {Irregular}, {notPlanned}, {Irreg}, {Quaterly}, {Unknown}, {Annually\_2}, {Annually}, {Monthly}, {Cont}, {Daily}}
+      ]
+    \addplot[orange] coordinates {(3119,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (4688,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (4948,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (21368,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (25176,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (30749,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (31727,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (38560,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (54556,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (62171,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (69754,10)};
+  \end{axis}  
+\end{tikzpicture}
 \caption{Use of the property dct:accrualPeriodicity}
 \end{figure}
 \subsubsection{52\% of the datasets provide a provenance}
@@ -338,15 +482,48 @@ Figures 20 to 22 represent the use of mandatory, optional and recommended proper
 \\
 \\
 \begin{figure}[H]
-\includegraphics{replace23.png}
+\begin{tikzpicture}
+  \begin{axis}[
+      stacked style,
+      yticklabels={{dcat:accessURL}}
+      ]
+    \addplot[teal] coordinates {(99.07,0)};
+  \end{axis}  
+\end{tikzpicture}
 \caption{Use of mandatory properties of the class Distribution in the EDP}
 \end{figure}
 \begin{figure}[H]
-\includegraphics{replace24.png}
+\begin{tikzpicture}
+  \begin{axis}[
+      stacked style,
+      yticklabels={{dct:format}, {dct:license}, {dct:description}}
+      ]
+    \addplot[blue] coordinates {(12.17,0) (0,1) (0,2)};
+    \addplot[blue] coordinates {(0,0) (27.86,1) (0,2)};
+    \addplot[blue] coordinates {(0,0) (0,1) (57.76,2)};
+  \end{axis}  
+\end{tikzpicture}
 \caption{Use of recommended properties of the class Distribution in the EDP}
 \end{figure}
 \begin{figure}[H]
-\includegraphics{replace25.png}
+\begin{tikzpicture}
+  \begin{axis}[
+      stacked style,
+      yticklabels={{foaf:page}, {adms:status}, {dct:conformsTo}, {spdx:checksum}, {dct:language}, {dcat:byteSize}, {dct:rights}, {dct:modified}, {dct:issued}, {dcat:mediaType}, {dcat:downloadURL}, {dct:title}}
+      ]
+    \addplot[red] coordinates {(0.001,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11)};
+    \addplot[red] coordinates {(0,0) (0.001,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11)};
+    \addplot[red] coordinates {(0,0) (0,1) (0.07,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0.72,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (1.74,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (1.56,5) (0,6) (0,7) (0,8) (0,9) (0,10) (0,11)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (7.05,6) (0,7) (0,8) (0,9) (0,10) (0,11)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (11.96,7) (0,8) (0,9) (0,10) (0,11)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (12.06,8) (0,9) (0,10) (0,11)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (25.52,9) (25.29,10) (0,11)};
+    \addplot[red] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10) (77.17,11)};
+  \end{axis}  
+\end{tikzpicture}
 \caption{Use of optional properties of the class Distribution in the EDP}
 \end{figure}
 
@@ -583,12 +760,34 @@ As a reference, the colour code used for the countries is express on Figure 14.
 \end{figure}
 
 \begin{figure}[H]
-\includegraphics{replace4.png}
+\begin{tikzpicture}
+  \begin{axis}[
+    default style,
+    yticklabels={{dct:dataset}, {dct:description}, {dct:publisher}, {dct:title}}
+    ]
+    \addplot[switzerland] coordinates { (100,0) (0,1) (0,2) (0,3)};
+    \addplot[sweden] coordinates { (0,0) (0,1) (0,2) (0,3)};
+    \addplot[spain] coordinates { (100,0) (100,1) (100,2) (100,3)};
+    \addplot[norway] coordinates { (100,0) (100,1) (100,2) (100,3)};
+    \addplot[ireland] coordinates { (100,0) (0,1) (0,2) (100,3)};
+  \end{axis}
+\end{tikzpicture}
 \caption{Mandatory properties in the Catalog class}
 \end{figure}
 
 \begin{figure}[H]
-\includegraphics{replace5.png}
+\begin{tikzpicture}
+  \begin{axis}[
+    default style,
+    yticklabels={{foaf:modified},{dct:themeTaxonomy},{dct:issued}, {dct:license}, {dcat:language}, {dct:homepage}}
+    ]
+    \addplot[switzerland] coordinates { (0,0) (0,1) (0,2) (0,3) (0,4) (0,5)};
+    \addplot[sweden] coordinates { (0,0) (0,1) (0,2) (0,3) (0,4) (0,5)};
+    \addplot[spain] coordinates { (100,0) (100,1) (100,2) (100,3) (100,4) (100,5)};
+    \addplot[norway] coordinates { (100,0) (100,1) (0,2) (0,3) (0,4) (100,5)};
+    \addplot[ireland] coordinates { (100,0) (0,1) (0,2) (0,3) (100,4) (100,5)};
+  \end{axis}
+\end{tikzpicture}
 \caption{Recommended properties in the Catalog class}
 \end{figure}
 
