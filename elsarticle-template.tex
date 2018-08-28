@@ -157,7 +157,8 @@ To analyse the DCAT-AP use and needs in Europe, we studied two aspects. In the f
 \subsection{Analysis of National Extensions}
 In the first part of the analysis we present the detail information about the analysis of the national extensions. More specifically, we review the changes proposed in the formal specification of national profiles. After that, in the second part, we examine the actual use of these extensions.
 
-Regarding the collection of formal specifications, we manually found and collected them from the National DCAT-AP portals shown in Table 1: National DCAT-AP profiles. This had to be done manually as for many portals no directly exportable data formats were available, e.g., a schema file. Moreover, we noticed that even when a formal specification is available as an OWL ontology, there may be still more restrictions in the textual specification. Some of these inconsistencies appear due to limitations in the expressive power of OWL. Some of these inconsistencies appear due to limitations in the expressive power of OWL. Another finding is that even though some countries maintain a list of updated, added and deleted properties to DCAT-AP, others have added additional properties or made updates to the standard DCAT-AP, but did not explicitly document the changes. As a consequence, the change identification was a rather tedious task. 
+Regarding the collection of formal specifications, we manually found and collected them from the National DCAT-AP portals shown in Table 1: National DCAT-AP profiles. This had to be done manually as for many portals no directly exportable data formats were available, e.g., a schema file. Moreover, we noticed that even when a formal specification is available as an OWL ontology, there may be still more restrictions in the textual specification. Some of these inconsistencies appear due to limitations in the expressive power of OWL.
+Another finding is that even though some countries maintain a list of updated, added and deleted properties to DCAT-AP, others have added additional properties or made updates to the standard DCAT-AP, but did not explicitly document the changes. As a consequence, the change identification was a rather tedious task. 
 
 As a result of our investigation, we created an analysis report by comparing each class and property from the national profiles with the usage notes, cardinality, and status (optional, recommended, or mandatory) in DCAT-AP. Moreover, from this change analysis report, we identified updates in properties’ ranges as well as the removal of properties and classes.
 
@@ -225,7 +226,6 @@ WHERE {
 The European Data Portal harvests the metadata from data portals in Europe. These data portals use DCAT-AP in different ways: some are not using DCAT-AP at all, some follow a national DCAT-AP profile and some claim to be fully-compliant with DCAT-AP. In this respect, the EDP maps these varied uses of DCAT-AP to their own use of DCAT-AP, adding new properties on top of the mappings such as properties under the class \textit{dcat:CatalogRecord}. Indeed, these mappings and additions influence the analysis conducted in this part of the study. Hence, by querying the EDP endpoint, this analysis assesses only partially the use of DCAT-AP for all data portals harvested by the EDP, as some properties and values from national portals might not be harvested.
 
 Particularly, the outcomes of this analysis raised a number of questions for the experts of the DCAT-AP working group. As a consequence, these questions were presented and discussed during two webinars on 19/10/2017\footnote{\href{ https://joinup.ec.europa.eu/event/dcat-ap-change-management-release-policy-webinar-19-october-2017-1400-cet}{ https://joinup.ec.europa.eu/event/dcat-ap-change-management-release-policy-webinar-19-october-2017-1400-cet}} and on 08/12/2017\footnote{\href{ https://joinup.ec.europa.eu/event/change-and-release-management-policy-dcat-ap-final-webinar-8-december-2017-1000-cet}{ https://joinup.ec.europa.eu/event/change-and-release-management-policy-dcat-ap-final-webinar-8-december-2017-1000-cet}}. The comments received during those webinars are included in the explanations in Chapter 4. Moreover, in order to further continue the discussion online, topics were created in the DCAT-AP repository on GitHub\footnote{\href{  https://github.com/SEMICeu/DCAT-AP}{  https://github.com/SEMICeu/DCAT-AP}}, where members of the DCAT-AP working group provide their views on the use of different properties and classes and, consequently, on how these elements should be tackled in the next version of DCAT-AP.
-
 Besides the analysis of the use of DCAT-AP classes and properties, a more detailed analysis was conducted for the properties having a controlled vocabulary specified in DCAT-AP. For those properties, targeted at large catalogues that use the properties, a subset of metadata was extracted from the EDP SPARQL endpoint as N-triples. Specifically, the subset represents 5552 datasets from 6 catalogues harvested by the EDP. The catalogues were selected based on several criteria: they should have a significant size to ensure a good representation of all properties that use code lists, they should represent different content types to avoid an over-representation of geospatial data sets and they should be geographically spread across the European Union. For each property supposed to take a value from a controlled vocabulary, two validation checks were done:
 
 \begin{itemize}
@@ -254,14 +254,11 @@ Before going to the details of our analysis, we present here a general overview 
 
 As we mentioned before, DCAT-AP is based on the Data Catalog Vocabulary (DCAT). Essentially, DCAT-AP allows the exchange of descriptions of data sets among data portals with the purpose of favouring data sets explorations in a cross-portal environment.\footnote{\href{DCAT Application Profile for Data Portals in Europe}{https://joinup.ec.europa.eu/release/dcat-application-profile-data-portals-europe-final}}
 
-\section{Analysis of DCAT-AP use on the European Data Portal}
-
-\subsection{Analysis of the use of classes and properties} \label{EDPUse}
+\section{Overview of empirical findings}
+\todo[inline]{is there a need for a subtitle here? 3.1 EDP and 3.2 National extensions, 3.1.1. Classes/properties and 3.1.2 Code lists. This will be overkill in the subsubsubsections. Alternative: 3.1 Classes/Prop EDP, 3.2 Code lists EDP, 3.3 National extensions}
+\subsection{Use of DCAT-AP classes and properties on the European Data Portal} \label{EDPUse}
 The collection of data was performed on 10/10/2017 following the methodology described in chapter 2. The results of the queries show that the EDP publishes information about 80 catalogues. These catalogues contain all together 743.746 datasets and 982.771 distributions. Each of the following sub-sections gives an overview of the use of the measured occurrence of properties for the DCAT-AP classes: \textit{dcat:Catalog, dcat:Dataset, dcat:Distribution} and \textit{dcat:CatalogRecord}.
-
-\todo[inline]{MC: I have eagerly replaced all bold titles by `subsubsection'. If this is overkill, they can be replaced by `subsubsection*' Adding the * will remove the section number.}
 \subsubsection{dcat:Catalog}
-
 In DCAT-AP, a \textit{catalogue} is defined as a \textit{‘repository that hosts the datasets being described’}. The use of its mandatory, recommended and optional properties appear in the figures 3 to 5.
 
 \begin{figure}[H]
@@ -304,19 +301,10 @@ In DCAT-AP, a \textit{catalogue} is defined as a \textit{‘repository that host
 \caption{Use of optional properties of the class Catalog in the EDP}
 \end{figure}
 
-As shown in figure 3, the mandatory properties for the \textit{dcat:Catalog} class are respected in almost all cases. From the 3 catalogues with no dct:publisher attributed, 2  have in practice an organisation specified as publisher.
-
-The recommended properties, dcat:themeTaxonomy and dct:modified were present in 100\% of the cases, meaning that all the catalogues queried specify at least one theme and a date. The EDP populates these two properties by default:
-\begin{itemize}
-\item for the theme taxonomy, by using the MDR data themes NAL or a mapping of the data themes harvested to the MDR data themes NAL\footnote{\href{http://publications.europa.eu/mdr/authority/data-theme/index.html}{ http://publications.europa.eu/mdr/authority/data-theme/index.html}}, as recommended in \textit{`How to use the MDR data themes vocabulary'}\footnote{\href{https://joinup.ec.europa.eu/release/dcat-ap-how-use-mdr-data-themes-vocabulary}{  https://joinup.ec.europa.eu/release/dcat-ap-how-use-mdr-data-themes-vocabulary }}; and
-\item for the modified date, as the latest harvested date of each catalogue by the EDP.
-\end{itemize}
-Note that this means that even in case national portals do not specify these properties, which happens as we observed in the analysis reported in section \ref{NationalExtensions}, the EDP will present a value. Almost all the catalogues (98.75\%) provide the first harvested date with the property \textit{dct:issued}, and 23.75\% of the catalogues include a homepage. 
-An important observation concerning the use of the recommended properties \textit{dct:license} and \textit{dct:language} is that no catalogue specified any of the two properties. The observation on the licence is not in contradiction with the usage note of the property \textit{dct:license} on \textit{dcat:Catalog}. The licence attribute on a catalogue refers to the licence of the catalogue itself, not of the individual datasets nor distributions.\footnote{\href{https://www.w3.org/TR/vocab-dcat/\#class-catalog}{https://www.w3.org/TR/vocab-dcat/\#class-catalog}} 
 
 \subsubsection{dcat:Dataset}
 
-Figures 6 and 7 present the use of mandatory and recommended properties on the \textit{dcat:Dataset} class. The findings are further described below the figures.
+Figures 6, 7 and 8 present the use of mandatory, recommended and optional properties on the \textit{dcat:Dataset} class. The findings are further described in chapter \ref{discussion}.
 \begin{figure}[H]
 \begin{tikzpicture}
   \begin{axis}[
@@ -342,24 +330,6 @@ Figures 6 and 7 present the use of mandatory and recommended properties on the \
 \end{tikzpicture}
 \caption{Use of recommended properties of the class Dataset in the EDP}
 \end{figure}
-
-
-\subsubsection*{dct:description not 100\% used}
-\textit{dct:description} is a mandatory property, yet it is not used on all datasets. As titles for datasets are often not self-explanatory, which is the case for many of these  26.328 data sets without description. Portal owners are encouraged to complete the use of descriptions to improve the understanding and the discoverability of the datasets.
-
-\subsubsection*{Relationship between Dataset and Distribution}
-Since a dataset can have several distributions, for example a distribution in CSV format and one in XML, it was expected that the number of distributions (932.771) is higher than the number of datasets (743.000). The analysis however shows that not all datasets have a distribution. This can be explained by the fact that there are other ways to access the data, for example via \textit{dcat:landingPage} (38.42\%) or \textit{foaf:page} (10.31\%), which is often used for geospatial datasets that are accessed through web APIs, such as map services.  We also verified that data publishers were not using multiple properties (distribution, landing page and/or page) for the same dataset. The only overlapping use is really minor as it only concerns 17 datasets having at the same time a \textit{dct:landingPage} and a \textit{foaf:page}.
-
-\subsubsection*{Relationship between dct:publisher and dcat:contactPoint}
-In the guideline \textit{‘How are publisher and contact point modelled?’}\footnote{\href{ https://joinup.ec.europa.eu/release/how-are-publisher-and-contact-point-modelled }{ https://joinup.ec.europa.eu/release/how-are-publisher-and-contact-point-modelled }}, the following recommendation is made:
-\textit{‘The way that DCAT and DCAT-AP distinguish between the publisher (the organisation that makes the catalogue or dataset available) and contact information (address where more information can be requested, or feedback can be given) is a continuing source of confusion. It is important to differentiate and provide the two types of information: Publisher is necessary to identify the entity and Contact point allows any person/organisation to communicate and provide feedback.’}
-
-As visualised in figure 7, the two properties \textit{dct:publisher} and \textit{dcat:contactPoint} have approximately the same frequency of use. When analysing more in details if the use of the two properties is aligned with the guideline, we found that among the 38.672 datasets which have both properties defined: 34\% (13.133) have a different publisher than the contact point and 66\% (25.539) duplicate the information from \textit{dct:publisher} to \textit{dcat:contactPoint}, as specified in the guideline.
-
-\subsubsection*{Optional properties on dcat:Dataset}
-
-Figure 8 introduces the use of optional properties for the Dataset class. The results are further described in the paragraphs below.
-\\
 \begin{figure}[H]
 \begin{tikzpicture}
   \begin{axis}[
@@ -392,101 +362,8 @@ Figure 8 introduces the use of optional properties for the Dataset class. The re
 \caption{Use of optional properties of the class Dataset in the EDP}
 \end{figure}
 
-\subsubsection*{Use of dct:identifier and adms:identifier}
-DCAT-AP foresees two optional properties for identifying a dataset, \textit{dct:identifier} and \textit{adms:identifier}. While the first one is described as the main unique identifier, e.g. a URI, the second property is provided as a secondary identifier. In practice, the second is used in 100\% of the cases by the EDP itself while the first is in some cases provided by the catalogue of datasets harvested. In most of the cases assessed, the \textit{dct:identifier} follows the same format as the \textit{adms:identifier}. This tends to confirm that the EDP provides a \textit{dct:identifier} and a dataset URI for all the datasets which do not have one already.
-
-\subsubsection*{Use of dct:spatial}
-DCAT-AP mandates to use controlled vocabularies for the property \textit{dct:spatial}. The list of controlled vocabularies is:
-
-\begin{itemize}
-\item MDR Continents Named Authority List\footnote{\href{  http://publications.europa.eu/mdr/authority/continent/}{  http://publications.europa.eu/mdr/authority/continent/}} ;
-\item MDR Countries Named Authority List\footnote{\href{  http://publications.europa.eu/mdr/authority/country/}{  http://publications.europa.eu/mdr/authority/country/}} ; and
-\item MDR Places Named Authority List\footnote{\href{  http://publications.europa.eu/mdr/authority/place/}{  http://publications.europa.eu/mdr/authority/place/}} .
-\item Otherwise, Geonames\footnote{\href{  http://www.geonames.org/}{  http://www.geonames.org/}} URIs.
-\end{itemize}
-
-The guideline \textit{‘How should dct:spatial and dct:Location be used?’}\footnote{\href{  https://joinup.ec.europa.eu/release/how-should-dctspatial-and-dctlocation-be-used}{  https://joinup.ec.europa.eu/release/how-should-dctspatial-and-dctlocation-be-used}} reminds also that geographic coordinates can be used to represent a spatial region following the approach described in GeoDCAT-AP. We looked at the use of \textit{dct:spatial}. As shown in table 2, the most used URIs are from Spain (i.e. datos.gob.es) with a local vocabulary, from Flanders (Belgium) with geonames, and from multiple countries with the MDR Countries Named Authority List. The correct use of \textit{dct:spatial} following the controlled vocabularies is detailed in section \ref{VocabularyAnalysis}. 
-
-\begin{longtable}{*8l}
-\rowcolor{blue!90}
-\textcolor{white}{\textbf{spatial URI}} & \textcolor{white}{\textbf{Count}} \\ \hline
-\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Pais-Vasco} &4524 \\ \hline
-\rowcolor{gray!10} \url{http://sws.geonames.org/3337388} &3824 \\ \hline
-\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Pais/Espa\%C3\%B1a} &3272 \\ \hline
-\rowcolor{gray!10} \url{http://sws.geonames.org/3337388/} &3260 \\ \hline
-\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon} &3108 \\ \hline
-\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Madrid} &885 \\ \hline
-\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Malaga} &837\\ \hline
-\rowcolor{gray!10} \url{http://sws.geonames.org/2802361/} &825\\ \hline
-\rowcolor{gray!10} \url{https://ruian.linked.opendata.cz/zdroj/st\%C3\%A1ty/1} &653\\ \hline
-\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Galicia} &541\\ \hline
-\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Castilla-Leon } &526\\ \hline
-\rowcolor{gray!10} \url{http://sws.geonames.org/2797656/ } &422\\ \hline
-\rowcolor{gray!10} \url{http://publications.europa.eu/resource/authority/country/FRA  } &420\\ \hline
-\rowcolor{gray!10} \url{http://publications.europa.eu/resource/authority/country/DNK } &415\\ \hline
-\rowcolor{gray!10} \url{http://publications.europa.eu/resource/authority/country/EST 	} &414\\ \hline
-\rowcolor{gray!10} \url{http://publications.europa.eu/resource/authority/country/SVN } &410\\ \hline
-\rowcolor{gray!10} \url{http://publications.europa.eu/resource/authority/country/LVA } &409\\ \hline
-\\ 
-\caption{Use of dct:spatial for dcat:Dataset}
-\end{longtable}
-
-A similar query was run for the class \textit{dcat:Catalog}. The spatial property is used by 33 countries as shown in Table 3.
-
-\begin{longtable}{*8l}
-\rowcolor{blue!90}
-\textcolor{white}{\textbf{spatial}} & \textcolor{white}{\textbf{Count}} & \textcolor{white}{\textbf{spatial}} & \textcolor{white}{\textbf{Count}} & \textcolor{white}{\textbf{spatial}} & \textcolor{white}{\textbf{Count}} \\ \hline
-\rowcolor{gray!10} IT &6 &LV &2 &MT &1 \\ \hline
-\rowcolor{gray!10} ES &5 &NL &2 &LI &1 \\ \hline
-\rowcolor{gray!10} CZ &4 &FI &2 &RS &1 \\ \hline
-\rowcolor{gray!10} DE &3 &SI &2 &CY &1 \\ \hline
-\rowcolor{gray!10} AT &3 &PT &2 &IE &1 \\ \hline
-\rowcolor{gray!10} HR &3 &SE &2 &CH &1 \\ \hline
-\rowcolor{gray!10} PL &3 &SK &2 &HU &1 \\ \hline
-\rowcolor{gray!10} EE &2 &NO &2 &LT &1 \\ \hline
-\rowcolor{gray!10} IS &2 &FR &2 &BG &1 \\ \hline
-\rowcolor{gray!10} RO &2 &GB &2 &MD &1 \\ \hline
-\rowcolor{gray!10} LU &2 &BE &2 &DK &1 \\ \hline
-\\ 
-\caption{Use of dct:spatial for the class dcat:Catalog}
-\end{longtable}
-
-\subsubsection*{Use of dct:accrualPeriodicity}
-The property \textit{dct:accrualPeriodicity} indicates the frequency at which a dataset updated by its owner. From the different periodicities with their use, the most used frequencies are visualised in Figure 9. One important point to notice concerns the quantity of duplicated frequencies, e.g. IRREG and IRREGULAR. For example, some datasets are described using the authority code (i.e. IRREG) provided by the frequency authority list from the Publications Office\footnote{\href{http://publications.europa.eu/mdr/resource/authority/frequency/html/frequencies-eng.html }{ http://publications.europa.eu/mdr/resource/authority/frequency/html/frequencies-eng.html }} while other datasets use the label from the same authority list (i.e. IRREGULAR). 
-\\
-\\
-\begin{figure}[H]
-\begin{tikzpicture}
-  \begin{axis}[
-      stacked style,
-      xmin=0,
-      xmax=69754,
-      nodes near coords= {\pgfmathprintnumber\pgfplotspointmeta\space},
-      yticklabels={{asNeeded}, {Irregular}, {notPlanned}, {Irreg}, {Quaterly}, {Unknown}, {Annually\_2}, {Annually}, {Monthly}, {Cont}, {Daily}}
-      ]
-    \addplot[orange] coordinates {(3119,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
-    \addplot[orange] coordinates {(0,0) (4688,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
-    \addplot[orange] coordinates {(0,0) (0,1) (4948,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
-    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (21368,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
-    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (25176,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
-    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (30749,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
-    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (31727,6) (0,7) (0,8) (0,9) (0,10)};
-    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (38560,7) (0,8) (0,9) (0,10)};
-    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (54556,8) (0,9) (0,10)};
-    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (62171,9) (0,10)};
-    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (69754,10)};
-  \end{axis}  
-\end{tikzpicture}
-\caption{Use of the property dct:accrualPeriodicity}
-\end{figure}
-\subsubsection{52\% of the datasets provide a provenance}
-The provenance is supposed to be used for providing a statement about the lineage of a dataset. In a guideline on how to model and express provenance\footnote{\href{  https://joinup.ec.europa.eu/release/dcat-ap-how-model-and-express-provenance}{  https://joinup.ec.europa.eu/release/dcat-ap-how-model-and-express-provenance}}, the following recommendation was made: \textit{‘As the provision of provenance information is not wide-spread and information in free text does not allow further processing, the usefulness of such information in (international) harvesting is questionable and the information may be ignored. Local implementations are of course free to provide provenance information satisfying local requirements.’ }However, the guideline recognises the potential of such information: \textit{‘It could support credibility of a dataset to know which organisation created the metadata for it in the first place and how the description was modified along a chain of exchanges.’}\\
-In practice, the different uses of provenance specified above were observed, which demonstrates that the use of this property is not standardised. For example, a dataset\footnote{\href{  https://www.europeandataportal.eu/data/dataset/00dfaddf-f2f0-487a-b28e-aad53a318521}{https://www.europeandataportal.eu/data/dataset/00dfaddf-f2f0-487a-b28e-aad53a318521}} describes the provenance by mentioning the context and the organisation responsible for the creation of the dataset (translation from Dutch): \textit{‘Label: This map was established on the basis of an inventory during the establishment of the provincial policy for recreational and professional use of waterways.’}
-Moreover, the provenance is also used to keep track of the modifications applied to a dataset. One example is \url{https://www.europeandataportal.eu/data/dataset/de-pangaea-dataset864016} with: \textit{‘Label: The data set was checked for completeness, correctness, and consistency of metainformation. Validity of used methods was checked and - if applicable - precision and range of data.’} Consequently, we would recommend that the owners and users of DCAT-AP further implement the existing guideline, as it is still relevant.
-
 \subsubsection{dcat:Distribution}
-
-Figures 20 to 22 represent the use of mandatory, optional and recommended properties for the Distribution class. The results are discussed in the paragraphs below.
+Figures 20 to 22 represent the use of mandatory, optional and recommended properties for the Distribution class. The results are discussed in chapter \ref{discussion}.
 \\
 \\
 \begin{figure}[H]
@@ -535,29 +412,10 @@ Figures 20 to 22 represent the use of mandatory, optional and recommended proper
 \caption{Use of optional properties of the class Distribution in the EDP}
 \end{figure}
 
-\subsubsection{Relationship between accessURL, downloadURL and Distributions}
-
-As the shown in figure 20, almost all distributions respect the mandatory property \textit{dcat:accessURL}. There was no case for which a distribution lacked both the \textit{accessURL} and \textit{downloadURL}.\\
-We also looked at the use of the two properties combined, to confirm if this use is differentiated or not. In practice, 16.866 distributions queried have different URLs for access and download while 253.006 distributions\footnote{The number of distributions using downloadURL is slightly different than in the percentage of the visual below (optional property dcat:downloadURL) due of the time gap between queries.}  have the same URL. This shows that the high majority of the distributions using the two properties do not provide different information for both properties but simply copy twice a downloadURL, as explained in the guideline ‘How to use accessURL and downloadURL?’\footnote{\href{   https://joinup.ec.europa.eu/release/how-use-accessurl-and-downloadurl }{https://joinup.ec.europa.eu/release/how-use-accessurl-and-downloadurl }}.
-
-\subsubsection{Use of licences}
-The low amount of licences defined at the level of distributions can be a barrier for the reuse of the Open Data, as many potential users might not take the risk of using distributions without knowing under which conditions they can do it. The EDP also adds that 90\% of the licences of the datasets on the portal are unknown\footnote{\href{https://www.europeandataportal.eu/mqa-service/en}{ https://www.europeandataportal.eu/mqa-service/en }}. The portal considers a licence as unknown if it is not part of the list of licences provided by CKAN\footnote{\href{https://www.europeandataportal.eu/en/licence-assistant}{ https://www.europeandataportal.eu/en/licence-assistant }}. Using known licences for the datasets would greatly simplify the work required for potential users before deciding if they can use specific datasets or not.\\
-In general, we also found that the distributions providing a known licence are compliant with the guideline on \textit{‘How to refer to licence documents and licence URIs?’}\footnote{\href{https://joinup.ec.europa.eu/release/dcat-ap-how-refer-licence-documents-and-licence-uris}{  https://joinup.ec.europa.eu/release/dcat-ap-how-refer-licence-documents-and-licence-uris}}. The guideline specifies that licences should always be identified with URIs which should resolve to the description of the licence.
-
-\subsubsection{Relationship between dct:title, dct:format and dcat:mediaType}
-DCAT-AP recommends to use:
-\begin{itemize}
-\item \textit{dct:format} to give information about the file format of the distribution;
-\item \textit{dcat:mediaType}, as a subproperty of dct:format, to follow the official register of media types managed by IANA\footnote{\href{ https://www.iana.org/assignments/media-types/media-types.xhtml}{   https://www.iana.org/assignments/media-types/media-types.xhtml}}; and
-\item \textit{dct:title} to give a name to the distribution.
-\end{itemize}
-
-However, our analysis proved that many distributions do the opposite: \textit{dct:title} is in many cases used to inform about the format of the file instead of \textit{dct:format}. Despite this misuse, when looking at the combined use of \textit{dct:title} and \textit{dcat:mediaType}, most distributions use appropriately the two properties: \textit{dct:title} as a name for the distribution and \textit{dcat:mediaType} with a value from IANA. Some members of the DCAT-AP community have expressed a preference to use only \textit{dct:format} with IANA media type. One reason for using IANA media types, is that you can express the \textit{innerMimeType} for ZIP-Files. On the other hand, \textit{dct:format} is more flexible. Even though IANA does not include all geospatial values, they can be added to the MDR list (\textit{dct:format}). Section \ref{VocabularyAnalysis} goes deeper in the analysis of the controlled vocabularies for \textit{dct:format} and \textit{dcat:mediaType}. 
-
 \subsubsection{dcat:CatalogRecord}
 DCAT-AP defines the class Catalogue Record as \textit{‘a description of a dataset’s entry in the catalogue’}. The analysis shows a 100\% use of mandatory properties and recommended properties \textit{dct:issued} and \textit{adms:status}. Other properties are not used at Catalogue Record level.
 
-\subsection{Analysis of controlled vocabulary use on the European Data Portal} \label{VocabularyAnalysis}
+\subsection{Use of controlled vocabularies on the European Data Portal} \label{Vocabularynumbers}
 In DCAT-AP version 1.1, 15 properties are expected to use controlled vocabularies as summarised in table 4: 
 
 \begin{longtabu} to \textwidth {|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{5cm}|}
@@ -616,6 +474,312 @@ Table 5 summarises the findings for the different properties supposedly using co
 \caption{Number of errors found per property using controlled vocabularies }
 \end{longtable}
 
+\subsection{Analysis of the National Extensions to the DCAT-AP} \label{NationalExtensions}
+DCAT-AP v1.1 covers a basic set of properties and classes for online metadata exchange. Yet, to fulfil specific national needs that are not covered by the basic set of properties and classes, DCAT- AP can be extended without losing its compatibility to other DCAT-AP extensions. This extension can include changes, additions or removals in cardinality, classes and properties. Therefore, it is common for extensions to introduce new mandatory properties or move properties from the set of recommended to the set of optional ones. Along with that, extensions can include restrictions by adding cardinality, language and range constraints or even restricting semantics.
+
+\subsubsection{Analysed DCAT-AP extensions}
+The analysis includes the national DCAT-AP extensions for Belgium, Germany, Ireland, Italy, the Netherlands, Norway, Spain, Sweden and Switzerland, as detailed in Table 1. Moreover, in Fig. 2 is shown the map of analysed countries, where the darker colour indicates the existence of more changes for the national application profiles. 
+
+\begin{figure}[H]
+\includegraphics{replace2.png}
+\caption{Countries with a national profile based on DCAT-AP. A darker colour indicates more extensive modifications and additions to DCAT-AP.}
+\end{figure}
+
+In order to better explain the changes made by the national profiles, we briefly describe and highlight below significant changes of each extension.
+
+\begin{enumerate}
+\item \textit{DCAT-AP.be (Belgium):} Even though DCAT-AP.be does not include any additional properties, allows the data producers to add properties. In addition, each literal has a language tag, apparently to cater for the multilingual requirements in the Belgian context. Moreover, used keywords should map to the Data Theme Named Authority List of the Publication Office of the European Union\footnote{\href{http://publications.europa.eu/mdr/authority/data-theme/}{http://publications.europa.eu/mdr/authority/data-theme/}}. Organisations in the metadata
+% * Lina:
+% Which organisations?
+% 
+get an IRI which derives from the Belgian national company register. The class \textit{CatalogRecord} is not used in the Belgian extension.
+
+\item \textit{DCAT-AP.de (Germany):} The first version of the German extension of DCAT-AP focuses on copyright, licensing, and law restrictions corresponding to the German context. A second version was announced for 2018.
+
+\item \textit{DCAT-AP (Ireland):} The Irish extension is specified by a data exchange framework, which is based on the DCAT v1.0 profile. Here, the class \textit{Dataset} is provided with some additional geospatial metadata properties. Some of them have been added to DCAT-AP v.1.1. However, the extension still includes some properties that are not part of DCAT-AP v.1.1.
+
+\item \textit{DCAT-AP\_IT (Italy):} The Italian metadata profile DCAT-AP\_IT focuses on granulating the vCard:Kind class to enhance the information metadata for companies. To do so, the class \textit{dcatapit:Organization} was introduced as a subclass of \textit{vCard:Organization}, which is in turn is a subclass of \textit{vCard:Kind}. Additionally to those changes, dcatapit:Organization provides new properties to describe the contact point’s name, email,  telephone number, and URL (e.g., a homepage). Along with the changes to the class \textit{vCard:Kind}, several other classes were provided with additional properties.
+
+\item \textit{DCAT-AP-NL (the Netherlands):} The Dutch extension of DCAT-AP is called DCAT-AP-NL and was updated in the June 2017. The classes Dataset, Agent, Catalog, Record and Distribution were updated and include some additional properties like registration holder, language and identifier. 
+
+\item \textit{DCAT-AP-NO (Norway):} In the Norwegian DCAT-AP extension, most of the changes took place in the class \textit{Dataset} and \textit{Distribution}. The extension provides additional subject, creator, and access right comment properties for the class \textit{Dataset}. Additionally some properties have been added in order to describe relations between different datasets. DCAT-AP-NO also provides a new property dct:identifier for the class \textit{Agent}. On the other hand, the property dcat:mediaType in the class \textit{Distribution} was excluded, since it was considered to be the same as dct:format. 
+
+\item \textit{DCAT-AP-Spain (Spain):} The Spanish DCAT profile was developed and created before DCAT-AP was published and therefore cannot be seen as real extension of DCAT-AP. Given that, the current Spanish standard includes some legacy features, which could cause some interoperability issues with other extensions. In the scope of this analysis we regard the Spanish profile as an extension, in fact, we describe the different violations against the DCAT-AP v1.1.
+
+\item \textit{DCAT-AP-SE (Sweden):} The DCAT-AP-SE extension of DCAT-AP was developed for öppnadata.se, the Swedish national portal for Open Data. One focus of the Swedish extension was licensing, but also another focus was on restricting the \textit{vCard:Kind }class to either \textit{vCard:Individual} or \textit{vCard:Organization}. In addition, further contact detail properties were added. 
+
+\item \textit{CH-DCAT-AP (Switzerland):} The Swiss extension of DCAT-AP focuses on providing text elements in French, German, Italian and English. As a consequence, it is made mandatory that every text element is provided in each of these languages. 
+\end{enumerate}
+
+\subsubsection{Property changes}
+Hence adding, changing, or removing properties in extensions is common practice. In this overview we group these updates in mandatory, recommended/optional and exclusions of properties. 
+
+\subsubsection*{Mandatory changes}
+In the context of mandatory properties, \textit{dct:identifier} was the one which changed most often. Indeed, four extensions changed the property for the class \textit{Dataset}, while two replace it for the class \textit{Agent} and one for the class \textit{Standard}. Besides, for the class \textit{Dataset}, \textit{dct:identifier} is an optional property, but all four extensions changed it to mandatory.
+
+The property \textit{dct:publisher} in the class \textit{Dataset} was changed by four extensions. Furthermore, while DCAT-AP v1.1 specifies it as a recommended property, the extensions changed it to mandatory.
+
+The property \textit{dct:license} was changed by four extensions. Three extensions changed it from recommended to mandatory for the class \textit{Distribution}. One extension excluded this property and added a new licence attribute with a limited number of possible values. We discuss this property further in part 5.2.
+
+The \textit{dcat:theme} property in class \textit{Dataset} was changed by four extensions. All of them changed it from optional to mandatory.
+
+The \textit{vcard:fn} property was updated two times for the class \textit{Organization} and one time for the class \textit{Contact}. Along with that, \textit{vCard:hasEmail} was changed by three extensions, two changes in the class \textit{Organization} and one in the class \textit{Contact}. Both of these changes restricted the allowed values for vCard properties, where one change was restricting it to organization and the other also allows the use of vCards describing individuals. 
+
+The property \textit{dct:modified} was changed two times in the \textit{Dataset} and \textit{Catalogue} class. For \textit{dct:issued}, \textit{dcat:mediaType}, \textit{rdf:type}, \textit{dct:format}, and \\ \textit{dcat:accessURL}, two updates were found.
+In addition to the changes mentioned above, there is a set of twenty-seven additional changes of mandatory properties. Since all of them were only updated in one profile, we do not discuss them in further detail.
+
+\subsubsection*{Recommended and Optional changes}
+This section covers the most frequent changed recommended and optional properties. This includes all changes, where a recommended property was changed to an optional and vice versa. The difference between recommended and optional properties is not very strict. Either recommended or optional properties can be left unspecified, with the difference that recommended properties are suggested to be specified to fulfil the EU data interoperability standards. Optional properties however can be left unspecified but could be used to provide additional information about the data and improve the value of it.  
+
+The property \textit{dct:spatial} was changed the most. This includes three changes for the class \textit{Dataset} and one in the class \textit{Catalogue}. Unlike most property changes in section 3.2.1, the changes for \textit{dct:spatial} vary between the different national extensions. Two extensions changed \textit{dct:license} in the class \textit{Dataset} and one change was made in the class \textit{Distribution} and \textit{Catalogue}. The changes of \textit{dct:license} and \textit{dct:spatial} will be  further discussed in Section 5. 
+
+The property \textit{dct:identifier} was changed once in the class \textit{Agent} and \textit{Catalogue}. The property \textit{dct:subject} was changed in three extensions, and all changes took place in the class \textit{Dataset}. The \textit{vCard:hasTelephone} property was changed two times for the class \textit{Organization} and once for the class \textit{vCard:Contact}. Moreover, for the class \textit{Dataset}, \textit{dct:creator} was changed two times, while the class \textit{Distribution} has three. The class \textit{Standard} one change for the property \textit{dct:description}.
+
+Besides the changes mentioned above, there are additionally sixty-three other recommended and optional properties that were changed. Since all the changes took place in only one of the analysed extensions, we will not discuss them any further.
+
+\subsubsection*{Exclusion of Recommended and Optional properties}
+
+In some cases, the exclusion of a recommended or optional property is a valid option to improve the national extension of the DCAT-AP version. That is the case of DCAT-AP\_IT, DCAT-AP-NL and DCAT-AP-NO which have excluded such properties.
+
+The Italian extension DCAT-AP\_IT has the most exclusions. For the class \textit{Distribution} the recommended or optional properties \textit{spdx:checksum, foaf:page, dct:language, dct:conformsTo, dct:rights, adms:status,dct:issued} and \\ \textit{dcat:mediaType } were excluded. In the class \textit{Dataset} \textit{dct:relation}, \textit{dct:source}, \textit{dct:accessRights}, \textit{dct:provenance}, \textit{foaf:page}, \textit{dct:hasVersion}, \textit{adms:sample}, \textit{dct:type}, and \textit{adms:versionNotes} were excluded. Moreover, in the class \textit{Catalogue}, the properties \textit{hasPart, isPartOf, dcat:record, dct:spatial, dct:license, and dct:rights} are not included in the extension any more. In addition \textit{dct:type} is excluded for the class \textit{Agent}.
+
+DCAT-AP-NL and DCAT-AP-NO only excluded properties for the class \textit{Distribution}, where DCAT-AP-NO excluded the \textit{mediaType} and DCAT-AP-NL the \textit{license}, \textit{conformsTo, language, page, checksum, type, } and \textit{rights} properties.
+
+\subsubsection{Analysis of the use of properties}
+In this section, we present the result from measuring the use of properties of the \textit{Catalog}, \textit{Dataset}, and \textit{Distribution} classes in the selected national portals. As mentioned, we selected portals with a national profile and where a data dump in a standard RDF format was available. Using these criteria, we ended up with the national portals of Ireland, Norway, Spain, Sweden, and Switzerland. None of these countries use the \textit{CatalogRecord} class. As mentioned, we show charts for properties which were used by at least one portal on at least 10\% of the instances. However, all obligated and recommended properties matching these criteria are included in the charts. We give a short overview of the missing properties, since some of the portals rarely used them.
+
+\subsubsection*{Property use in the class Catalog}
+Here on, we present different charts in order to show the specific use of the properties in the class \textit{Catalog}, this for every analysed extension.
+As a reference, the colour code used for the countries is express on Figure 14.
+
+\begin{figure}[H]
+\includegraphics{replace3.png}
+\caption{Colour code for the countries}
+\end{figure}
+
+\begin{figure}[H]
+\begin{tikzpicture}
+  \begin{axis}[
+    default style,
+    yticklabels={{dct:dataset}, {dct:description}, {dct:publisher}, {dct:title}}
+    ]
+    \addplot[switzerland] coordinates { (100,0) (0,1) (0,2) (0,3)};
+    \addplot[sweden] coordinates { (0,0) (0,1) (0,2) (0,3)};
+    \addplot[spain] coordinates { (100,0) (100,1) (100,2) (100,3)};
+    \addplot[norway] coordinates { (100,0) (100,1) (100,2) (100,3)};
+    \addplot[ireland] coordinates { (100,0) (0,1) (0,2) (100,3)};
+  \end{axis}
+\end{tikzpicture}
+\caption{Mandatory properties in the Catalog class}
+\end{figure}
+
+\begin{figure}[H]
+\begin{tikzpicture}
+  \begin{axis}[
+    default style,
+    yticklabels={{foaf:modified},{dct:themeTaxonomy},{dct:issued}, {dct:license}, {dcat:language}, {dct:homepage}}
+    ]
+    \addplot[switzerland] coordinates { (0,0) (0,1) (0,2) (0,3) (0,4) (0,5)};
+    \addplot[sweden] coordinates { (0,0) (0,1) (0,2) (0,3) (0,4) (0,5)};
+    \addplot[spain] coordinates { (100,0) (100,1) (100,2) (100,3) (100,4) (100,5)};
+    \addplot[norway] coordinates { (100,0) (100,1) (0,2) (0,3) (0,4) (100,5)};
+    \addplot[ireland] coordinates { (100,0) (0,1) (0,2) (0,3) (100,4) (100,5)};
+  \end{axis}
+\end{tikzpicture}
+\caption{Recommended properties in the Catalog class}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics{Replace6.png}
+\caption{Optional properties in the Catalog class}
+\end{figure}
+
+We observed that for the class \textit{Catalog} all properties were frequently used, as shown in Figure 15 and 16 respectively. However, \textit{dct:hasPart,dct:isPartOf, dcat:record, dct:rights} and \textit{dct:spatial} were not used at all, as exhibited on Figure 17.
+
+\subsubsection*{Property use in the class Dataset}
+
+\begin{figure}[H]
+\includegraphics{replace7.png}
+\caption{Mandatory properties in the Dataset class}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics{replace8.png}
+\caption{Recommended properties in the Dataset class}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics{replace9.png}
+\includegraphics{replace10.png}
+\includegraphics{replace11.png}
+\caption{Optional properties in the Dataset class}
+\end{figure}
+
+% Check the images related to descriptions: I don't understand the relation between the text and the images presented from section 4.3.1 to 4.3.3 -- Lina
+
+The property \textit{dct:conformsTo} occurred rarely in the Spanish and Swiss data dumps. Moreover, the Swedish data dump was the only one, that used \textit{dct:isVersionOf, dct:provenance, owl:versionInfo} and \textit{adms:versionNotes}. On the other hand, the properties  \textit{dct:hasVersion, adms:sample, dct:type} were not used at all.
+
+\subsubsection*{Property use in the class Distribution}
+
+\begin{figure}[H]
+\includegraphics{replace12.png}
+\caption{Mandatory properties in the Distribution class}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics{replace13.png}
+\caption{Recommended properties in the Distribution class}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics{replace14.png}
+\includegraphics{replace15.png}
+\caption{Optional properties in the Distribution class}
+\end{figure}
+
+For the class \textit{Distribution}, \textit{spdx:checksum}, \textit{adms:status} were used by none of the portals. Furthemore, the property \textit{foaf:page} rarely occurred in the Swedish data dump.
+
+\section{Discussion}\label{discussion}
+\subsection{dcat:Catalog}
+
+\todo[inline]{Include sub-titles for mandatory, recommended and optional? Alternative: mention in the text whether a property is M/R/O}
+
+As shown in figure 3, the mandatory properties for the \textit{dcat:Catalog} class are respected in almost all cases. From the 3 catalogues with no dct:publisher attributed, 2  have in practice an organisation specified as publisher.
+
+The recommended properties, dcat:themeTaxonomy and dct:modified were present in 100\% of the cases, meaning that all the catalogues queried specify at least one theme and a date. The EDP populates these two properties by default:
+\begin{itemize}
+\item for the theme taxonomy, by using the MDR data themes NAL or a mapping of the data themes harvested to the MDR data themes NAL\footnote{\href{http://publications.europa.eu/mdr/authority/data-theme/index.html}{ http://publications.europa.eu/mdr/authority/data-theme/index.html}}, as recommended in \textit{`How to use the MDR data themes vocabulary'}\footnote{\href{https://joinup.ec.europa.eu/release/dcat-ap-how-use-mdr-data-themes-vocabulary}{  https://joinup.ec.europa.eu/release/dcat-ap-how-use-mdr-data-themes-vocabulary }}; and
+\item for the modified date, as the latest harvested date of each catalogue by the EDP.
+\end{itemize}
+Note that this means that even in case national portals do not specify these properties, which happens as we observed in the analysis reported in section \ref{NationalExtensions}, the EDP will present a value. Almost all the catalogues (98.75\%) provide the first harvested date with the property \textit{dct:issued}, and 23.75\% of the catalogues include a homepage. 
+An important observation concerning the use of the recommended properties \textit{dct:license} and \textit{dct:language} is that no catalogue specified any of the two properties. The observation on the licence is not in contradiction with the usage note of the property \textit{dct:license} on \textit{dcat:Catalog}. The licence attribute on a catalogue refers to the licence of the catalogue itself, not of the individual datasets nor distributions.\footnote{\href{https://www.w3.org/TR/vocab-dcat/\#class-catalog}{https://www.w3.org/TR/vocab-dcat/\#class-catalog}} 
+
+\subsection{dcat:Dataset}
+\subsubsection{Use of dct:description}
+\textit{dct:description} is a mandatory property, yet it is not used on all datasets. As titles for datasets are often not self-explanatory, which is the case for many of these  26.328 data sets without description. Portal owners are encouraged to complete the use of descriptions to improve the understanding and the discoverability of the datasets.
+
+\subsubsection{Relationship between Dataset and Distribution}
+Since a dataset can have several distributions, for example a distribution in CSV format and one in XML, it was expected that the number of distributions (932.771) is higher than the number of datasets (743.000). The analysis however shows that not all datasets have a distribution. This can be explained by the fact that there are other ways to access the data, for example via \textit{dcat:landingPage} (38.42\%) or \textit{foaf:page} (10.31\%), which is often used for geospatial datasets that are accessed through web APIs, such as map services.  We also verified that data publishers were not using multiple properties (distribution, landing page and/or page) for the same dataset. The only overlapping use is really minor as it only concerns 17 datasets having at the same time a \textit{dct:landingPage} and a \textit{foaf:page}.
+
+\subsubsection{Relationship between dct:publisher and dcat:contactPoint}
+In the guideline \textit{‘How are publisher and contact point modelled?’}\footnote{\href{ https://joinup.ec.europa.eu/release/how-are-publisher-and-contact-point-modelled }{ https://joinup.ec.europa.eu/release/how-are-publisher-and-contact-point-modelled }}, the following recommendation is made:
+\textit{‘The way that DCAT and DCAT-AP distinguish between the publisher (the organisation that makes the catalogue or dataset available) and contact information (address where more information can be requested, or feedback can be given) is a continuing source of confusion. It is important to differentiate and provide the two types of information: Publisher is necessary to identify the entity and Contact point allows any person/organisation to communicate and provide feedback.’}
+
+As visualised in figure 7, the two properties \textit{dct:publisher} and \textit{dcat:contactPoint} have approximately the same frequency of use. When analysing more in details if the use of the two properties is aligned with the guideline, we found that among the 38.672 datasets which have both properties defined: 34\% (13.133) have a different publisher than the contact point and 66\% (25.539) duplicate the information from \textit{dct:publisher} to \textit{dcat:contactPoint}, as specified in the guideline.
+
+\subsubsection{Use of dct:identifier and adms:identifier}
+DCAT-AP foresees two optional properties for identifying a dataset, \textit{dct:identifier} and \textit{adms:identifier}. While the first one is described as the main unique identifier, e.g. a URI, the second property is provided as a secondary identifier. In practice, the second is used in 100\% of the cases by the EDP itself while the first is in some cases provided by the catalogue of datasets harvested. In most of the cases assessed, the \textit{dct:identifier} follows the same format as the \textit{adms:identifier}. This tends to confirm that the EDP provides a \textit{dct:identifier} and a dataset URI for all the datasets which do not have one already.
+
+\subsubsection{Use of dct:spatial}
+DCAT-AP mandates to use controlled vocabularies for the property \textit{dct:spatial}. The list of controlled vocabularies is:
+
+\begin{itemize}
+\item MDR Continents Named Authority List\footnote{\href{  http://publications.europa.eu/mdr/authority/continent/}{  http://publications.europa.eu/mdr/authority/continent/}} ;
+\item MDR Countries Named Authority List\footnote{\href{  http://publications.europa.eu/mdr/authority/country/}{  http://publications.europa.eu/mdr/authority/country/}} ; and
+\item MDR Places Named Authority List\footnote{\href{  http://publications.europa.eu/mdr/authority/place/}{  http://publications.europa.eu/mdr/authority/place/}} .
+\item Otherwise, Geonames\footnote{\href{  http://www.geonames.org/}{  http://www.geonames.org/}} URIs.
+\end{itemize}
+
+The guideline \textit{‘How should dct:spatial and dct:Location be used?’}\footnote{\href{  https://joinup.ec.europa.eu/release/how-should-dctspatial-and-dctlocation-be-used}{  https://joinup.ec.europa.eu/release/how-should-dctspatial-and-dctlocation-be-used}} reminds also that geographic coordinates can be used to represent a spatial region following the approach described in GeoDCAT-AP. We looked at the use of \textit{dct:spatial}. As shown in table 2, the most used URIs are from Spain (i.e. datos.gob.es) with a local vocabulary, from Flanders (Belgium) with geonames, and from multiple countries with the MDR Countries Named Authority List. The correct use of \textit{dct:spatial} following the controlled vocabularies is detailed in section \ref{VocabularyAnalysis}. 
+
+\begin{longtable}{*8l}
+\rowcolor{blue!90}
+\textcolor{white}{\textbf{spatial URI}} & \textcolor{white}{\textbf{Count}} \\ \hline
+\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Pais-Vasco} &4524 \\ \hline
+\rowcolor{gray!10} \url{http://sws.geonames.org/3337388} &3824 \\ \hline
+\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Pais/Espa\%C3\%B1a} &3272 \\ \hline
+\rowcolor{gray!10} \url{http://sws.geonames.org/3337388/} &3260 \\ \hline
+\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon} &3108 \\ \hline
+\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Madrid} &885 \\ \hline
+\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Malaga} &837\\ \hline
+\rowcolor{gray!10} \url{http://sws.geonames.org/2802361/} &825\\ \hline
+\rowcolor{gray!10} \url{https://ruian.linked.opendata.cz/zdroj/st\%C3\%A1ty/1} &653\\ \hline
+\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Galicia} &541\\ \hline
+\rowcolor{gray!10} \url{http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Castilla-Leon } &526\\ \hline
+\rowcolor{gray!10} \url{http://sws.geonames.org/2797656/ } &422\\ \hline
+\rowcolor{gray!10} \url{http://publications.europa.eu/resource/authority/country/FRA  } &420\\ \hline
+\rowcolor{gray!10} \url{http://publications.europa.eu/resource/authority/country/DNK } &415\\ \hline
+\rowcolor{gray!10} \url{http://publications.europa.eu/resource/authority/country/EST 	} &414\\ \hline
+\rowcolor{gray!10} \url{http://publications.europa.eu/resource/authority/country/SVN } &410\\ \hline
+\rowcolor{gray!10} \url{http://publications.europa.eu/resource/authority/country/LVA } &409\\ \hline
+\\ 
+\caption{Use of dct:spatial for dcat:Dataset}
+\end{longtable}
+
+A similar query was run for the class \textit{dcat:Catalog}. The spatial property is used by 33 countries as shown in Table 3.
+
+\begin{longtable}{*8l}
+\rowcolor{blue!90}
+\textcolor{white}{\textbf{spatial}} & \textcolor{white}{\textbf{Count}} & \textcolor{white}{\textbf{spatial}} & \textcolor{white}{\textbf{Count}} & \textcolor{white}{\textbf{spatial}} & \textcolor{white}{\textbf{Count}} \\ \hline
+\rowcolor{gray!10} IT &6 &LV &2 &MT &1 \\ \hline
+\rowcolor{gray!10} ES &5 &NL &2 &LI &1 \\ \hline
+\rowcolor{gray!10} CZ &4 &FI &2 &RS &1 \\ \hline
+\rowcolor{gray!10} DE &3 &SI &2 &CY &1 \\ \hline
+\rowcolor{gray!10} AT &3 &PT &2 &IE &1 \\ \hline
+\rowcolor{gray!10} HR &3 &SE &2 &CH &1 \\ \hline
+\rowcolor{gray!10} PL &3 &SK &2 &HU &1 \\ \hline
+\rowcolor{gray!10} EE &2 &NO &2 &LT &1 \\ \hline
+\rowcolor{gray!10} IS &2 &FR &2 &BG &1 \\ \hline
+\rowcolor{gray!10} RO &2 &GB &2 &MD &1 \\ \hline
+\rowcolor{gray!10} LU &2 &BE &2 &DK &1 \\ \hline
+\\ 
+\caption{Use of dct:spatial for the class dcat:Catalog}
+\end{longtable}
+
+\subsubsection{Use of dct:accrualPeriodicity}
+The property \textit{dct:accrualPeriodicity} indicates the frequency at which a dataset updated by its owner. From the different periodicities with their use, the most used frequencies are visualised in Figure 9. One important point to notice concerns the quantity of duplicated frequencies, e.g. IRREG and IRREGULAR. For example, some datasets are described using the authority code (i.e. IRREG) provided by the frequency authority list from the Publications Office\footnote{\href{http://publications.europa.eu/mdr/resource/authority/frequency/html/frequencies-eng.html }{ http://publications.europa.eu/mdr/resource/authority/frequency/html/frequencies-eng.html }} while other datasets use the label from the same authority list (i.e. IRREGULAR). 
+\\
+\\
+\begin{figure}[H]
+\begin{tikzpicture}
+  \begin{axis}[
+      stacked style,
+      xmin=0,
+      xmax=69754,
+      nodes near coords= {\pgfmathprintnumber\pgfplotspointmeta\space},
+      yticklabels={{asNeeded}, {Irregular}, {notPlanned}, {Irreg}, {Quaterly}, {Unknown}, {Annually\_2}, {Annually}, {Monthly}, {Cont}, {Daily}}
+      ]
+    \addplot[orange] coordinates {(3119,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (4688,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (4948,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (21368,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (25176,4) (0,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (30749,5) (0,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (31727,6) (0,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (38560,7) (0,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (54556,8) (0,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (62171,9) (0,10)};
+    \addplot[orange] coordinates {(0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (0,8) (0,9) (69754,10)};
+  \end{axis}  
+\end{tikzpicture}
+\caption{Use of the property dct:accrualPeriodicity}
+\end{figure}
+\subsubsection{Use of dct:provenance}
+The provenance is supposed to be used for providing a statement about the lineage of a dataset. In a guideline on how to model and express provenance\footnote{\href{  https://joinup.ec.europa.eu/release/dcat-ap-how-model-and-express-provenance}{  https://joinup.ec.europa.eu/release/dcat-ap-how-model-and-express-provenance}}, the following recommendation was made: \textit{‘As the provision of provenance information is not wide-spread and information in free text does not allow further processing, the usefulness of such information in (international) harvesting is questionable and the information may be ignored. Local implementations are of course free to provide provenance information satisfying local requirements.’ }However, the guideline recognises the potential of such information: \textit{‘It could support credibility of a dataset to know which organisation created the metadata for it in the first place and how the description was modified along a chain of exchanges.’}\\
+In practice, the different uses of provenance specified above were observed, which demonstrates that the use of this property is not standardised. For example, a dataset\footnote{\href{  https://www.europeandataportal.eu/data/dataset/00dfaddf-f2f0-487a-b28e-aad53a318521}{https://www.europeandataportal.eu/data/dataset/00dfaddf-f2f0-487a-b28e-aad53a318521}} describes the provenance by mentioning the context and the organisation responsible for the creation of the dataset (translation from Dutch): \textit{‘Label: This map was established on the basis of an inventory during the establishment of the provincial policy for recreational and professional use of waterways.’}
+Moreover, the provenance is also used to keep track of the modifications applied to a dataset. One example is \url{https://www.europeandataportal.eu/data/dataset/de-pangaea-dataset864016} with: \textit{‘Label: The data set was checked for completeness, correctness, and consistency of metainformation. Validity of used methods was checked and - if applicable - precision and range of data.’} Consequently, we would recommend that the owners and users of DCAT-AP further implement the existing guideline, as it is still relevant.
+
+\subsection{dcat:Distribution}
+\subsubsection{Relationship between accessURL, downloadURL and Distributions}
+
+As the shown in figure 20, almost all distributions respect the mandatory property \textit{dcat:accessURL}. There was no case for which a distribution lacked both the \textit{accessURL} and \textit{downloadURL}.\\
+We also looked at the use of the two properties combined, to confirm if this use is differentiated or not. In practice, 16.866 distributions queried have different URLs for access and download while 253.006 distributions\footnote{The number of distributions using downloadURL is slightly different than in the percentage of the visual below (optional property dcat:downloadURL) due of the time gap between queries.}  have the same URL. This shows that the high majority of the distributions using the two properties do not provide different information for both properties but simply copy twice a downloadURL, as explained in the guideline ‘How to use accessURL and downloadURL?’\footnote{\href{   https://joinup.ec.europa.eu/release/how-use-accessurl-and-downloadurl }{https://joinup.ec.europa.eu/release/how-use-accessurl-and-downloadurl }}.
+
+\subsubsection{Use of licences}
+The low amount of licences defined at the level of distributions can be a barrier for the reuse of the Open Data, as many potential users might not take the risk of using distributions without knowing under which conditions they can do it. The EDP also adds that 90\% of the licences of the datasets on the portal are unknown\footnote{\href{https://www.europeandataportal.eu/mqa-service/en}{ https://www.europeandataportal.eu/mqa-service/en }}. The portal considers a licence as unknown if it is not part of the list of licences provided by CKAN\footnote{\href{https://www.europeandataportal.eu/en/licence-assistant}{ https://www.europeandataportal.eu/en/licence-assistant }}. Using known licences for the datasets would greatly simplify the work required for potential users before deciding if they can use specific datasets or not.\\
+In general, we also found that the distributions providing a known licence are compliant with the guideline on \textit{‘How to refer to licence documents and licence URIs?’}\footnote{\href{https://joinup.ec.europa.eu/release/dcat-ap-how-refer-licence-documents-and-licence-uris}{  https://joinup.ec.europa.eu/release/dcat-ap-how-refer-licence-documents-and-licence-uris}}. The guideline specifies that licences should always be identified with URIs which should resolve to the description of the licence.
+
+\subsubsection{Relationship between dct:title, dct:format and dcat:mediaType}
+DCAT-AP recommends to use:
+\begin{itemize}
+\item \textit{dct:format} to give information about the file format of the distribution;
+\item \textit{dcat:mediaType}, as a subproperty of dct:format, to follow the official register of media types managed by IANA\footnote{\href{ https://www.iana.org/assignments/media-types/media-types.xhtml}{   https://www.iana.org/assignments/media-types/media-types.xhtml}}; and
+\item \textit{dct:title} to give a name to the distribution.
+\end{itemize}
+
+However, our analysis proved that many distributions do the opposite: \textit{dct:title} is in many cases used to inform about the format of the file instead of \textit{dct:format}. Despite this misuse, when looking at the combined use of \textit{dct:title} and \textit{dcat:mediaType}, most distributions use appropriately the two properties: \textit{dct:title} as a name for the distribution and \textit{dcat:mediaType} with a value from IANA. Some members of the DCAT-AP community have expressed a preference to use only \textit{dct:format} with IANA media type. One reason for using IANA media types, is that you can express the \textit{innerMimeType} for ZIP-Files. On the other hand, \textit{dct:format} is more flexible. Even though IANA does not include all geospatial values, they can be added to the MDR list (\textit{dct:format}). Section \ref{VocabularyAnalysis} goes deeper in the analysis of the controlled vocabularies for \textit{dct:format} and \textit{dcat:mediaType}. 
+
+\subsection{Analysis of controlled vocabulary use on the European Data Portal} \label{VocabularyAnalysis}
 \subsubsection{dct:language on dcat:Dataset}
 The property \textit{dct:language} for the class \textit{dcat:Dataset} is used to indicate a language for a dataset. DCAT-AP requests implementers to provide a value from the MDR Languages Named Authority List\footnote{\href{   http://publications.europa.eu/mdr/authority/language/}{    http://publications.europa.eu/mdr/authority/language/}} such as \\
 \textit{$<$http://publications.europa.eu/resource/ authority/language/ENG$>$} for English. In our sample, only one catalogue uses \textit{dct:language} for the class Dataset pointing correctly to the MDR Languages Named Authority List. The other catalogues are not specifying the language for the class \textit{dcat:Dataset}.
@@ -684,172 +848,7 @@ The property \textit{adms:status }for the class \textit{dcat:CatalogRecord} refe
 The property \textit{dcat:themeTaxonomy} for the class \textit{dcat:Catalog} follows the same Controlled Vocabulary than \textit{dcat:theme} for the class \textit{Dataset}. All catalogues in the sample do not appropriately use the property. All of them indicate the correct first part of the URI, \\
 \textit{$<$http://publications.europa.eu/resource/authority/data-theme$>$}, but not the full URI expected with the authoritative code, such as \\ \textit{$<$http://publications.europa.eu/resource/ authority/data-theme/\textbf{AGRI}$>$}. As described in section 3.1, \textit{dcat:themeTaxonomy} is populated by the EDP for all catalogues harvested.
 
-\section{Analysis of the National Extensions to the DCAT-AP} \label{NationalExtensions}
-DCAT-AP v1.1 covers a basic set of properties and classes for online metadata exchange. Yet, to fulfil specific national needs that are not covered by the basic set of properties and classes, DCAT- AP can be extended without losing its compatibility to other DCAT-AP extensions. This extension can include changes, additions or removals in cardinality, classes and properties. Therefore, it is common for extensions to introduce new mandatory properties or move properties from the set of recommended to the set of optional ones. Along with that, extensions can include restrictions by adding cardinality, language and range constraints or even restricting semantics.
-
-\subsection{Analysed DCAT-AP extensions}
-The analysis includes the national DCAT-AP extensions for Belgium, Germany, Ireland, Italy, the Netherlands, Norway, Spain, Sweden and Switzerland, as detailed in Table 1. Moreover, in Fig. 2 is shown the map of analysed countries, where the darker colour indicates the existence of more changes for the national application profiles. 
-
-\begin{figure}[H]
-\includegraphics{replace2.png}
-\caption{Countries with a national profile based on DCAT-AP. A darker colour indicates more extensive modifications and additions to DCAT-AP.}
-\end{figure}
-
-In order to better explain the changes made by the national profiles, we briefly describe and highlight below significant changes of each extension.
-
-\begin{enumerate}
-\item \textit{DCAT-AP.be (Belgium):} Even though DCAT-AP.be does not include any additional properties, allows the data producers to add properties. In addition, each literal has a language tag, apparently to cater for the multilingual requirements in the Belgian context. Moreover, used keywords should map to the Data Theme Named Authority List of the Publication Office of the European Union\footnote{\href{http://publications.europa.eu/mdr/authority/data-theme/}{http://publications.europa.eu/mdr/authority/data-theme/}}. Organisations in the metadata
-% * Lina:
-% Which organisations?
-% 
-get an IRI which derives from the Belgian national company register. The class \textit{CatalogRecord} is not used in the Belgian extension.
-
-\item \textit{DCAT-AP.de (Germany):} The first version of the German extension of DCAT-AP focuses on copyright, licensing, and law restrictions corresponding to the German context. A second version was announced for 2018.
-
-\item \textit{DCAT-AP (Ireland):} The Irish extension is specified by a data exchange framework, which is based on the DCAT v1.0 profile. Here, the class \textit{Dataset} is provided with some additional geospatial metadata properties. Some of them have been added to DCAT-AP v.1.1. However, the extension still includes some properties that are not part of DCAT-AP v.1.1.
-
-\item \textit{DCAT-AP\_IT (Italy):} The Italian metadata profile DCAT-AP\_IT focuses on granulating the vCard:Kind class to enhance the information metadata for companies. To do so, the class \textit{dcatapit:Organization} was introduced as a subclass of \textit{vCard:Organization}, which is in turn is a subclass of \textit{vCard:Kind}. Additionally to those changes, dcatapit:Organization provides new properties to describe the contact point’s name, email,  telephone number, and URL (e.g., a homepage). Along with the changes to the class \textit{vCard:Kind}, several other classes were provided with additional properties.
-
-\item \textit{DCAT-AP-NL (the Netherlands):} The Dutch extension of DCAT-AP is called DCAT-AP-NL and was updated in the June 2017. The classes Dataset, Agent, Catalog, Record and Distribution were updated and include some additional properties like registration holder, language and identifier. 
-
-\item \textit{DCAT-AP-NO (Norway):} In the Norwegian DCAT-AP extension, most of the changes took place in the class \textit{Dataset} and \textit{Distribution}. The extension provides additional subject, creator, and access right comment properties for the class \textit{Dataset}. Additionally some properties have been added in order to describe relations between different datasets. DCAT-AP-NO also provides a new property dct:identifier for the class \textit{Agent}. On the other hand, the property dcat:mediaType in the class \textit{Distribution} was excluded, since it was considered to be the same as dct:format. 
-
-\item \textit{DCAT-AP-Spain (Spain):} The Spanish DCAT profile was developed and created before DCAT-AP was published and therefore cannot be seen as real extension of DCAT-AP. Given that, the current Spanish standard includes some legacy features, which could cause some interoperability issues with other extensions. In the scope of this analysis we regard the Spanish profile as an extension, in fact, we describe the different violations against the DCAT-AP v1.1.
-
-\item \textit{DCAT-AP-SE (Sweden):} The DCAT-AP-SE extension of DCAT-AP was developed for öppnadata.se, the Swedish national portal for Open Data. One focus of the Swedish extension was licensing, but also another focus was on restricting the \textit{vCard:Kind }class to either \textit{vCard:Individual} or \textit{vCard:Organization}. In addition, further contact detail properties were added. 
-
-\item \textit{CH-DCAT-AP (Switzerland):} The Swiss extension of DCAT-AP focuses on providing text elements in French, German, Italian and English. As a consequence, it is made mandatory that every text element is provided in each of these languages. 
-\end{enumerate}
-
-\subsection{Property changes}
-Hence adding, changing, or removing properties in extensions is common practice. In this overview we group these updates in mandatory, recommended/optional and exclusions of properties. 
-
-\subsubsection{Mandatory changes}
-In the context of mandatory properties, \textit{dct:identifier} was the one which changed most often. Indeed, four extensions changed the property for the class \textit{Dataset}, while two replace it for the class \textit{Agent} and one for the class \textit{Standard}. Besides, for the class \textit{Dataset}, \textit{dct:identifier} is an optional property, but all four extensions changed it to mandatory.
-
-The property \textit{dct:publisher} in the class \textit{Dataset} was changed by four extensions. Furthermore, while DCAT-AP v1.1 specifies it as a recommended property, the extensions changed it to mandatory.
-
-The property \textit{dct:license} was changed by four extensions. Three extensions changed it from recommended to mandatory for the class \textit{Distribution}. One extension excluded this property and added a new licence attribute with a limited number of possible values. We discuss this property further in part 5.2.
-
-The \textit{dcat:theme} property in class \textit{Dataset} was changed by four extensions. All of them changed it from optional to mandatory.
-
-The \textit{vcard:fn} property was updated two times for the class \textit{Organization} and one time for the class \textit{Contact}. Along with that, \textit{vCard:hasEmail} was changed by three extensions, two changes in the class \textit{Organization} and one in the class \textit{Contact}. Both of these changes restricted the allowed values for vCard properties, where one change was restricting it to organization and the other also allows the use of vCards describing individuals. 
-
-The property \textit{dct:modified} was changed two times in the \textit{Dataset} and \textit{Catalogue} class. For \textit{dct:issued}, \textit{dcat:mediaType}, \textit{rdf:type}, \textit{dct:format}, and \\ \textit{dcat:accessURL}, two updates were found.
-In addition to the changes mentioned above, there is a set of twenty-seven additional changes of mandatory properties. Since all of them were only updated in one profile, we do not discuss them in further detail.
-
-\subsubsection{Recommended and Optional changes}
-This section covers the most frequent changed recommended and optional properties. This includes all changes, where a recommended property was changed to an optional and vice versa. The difference between recommended and optional properties is not very strict. Either recommended or optional properties can be left unspecified, with the difference that recommended properties are suggested to be specified to fulfil the EU data interoperability standards. Optional properties however can be left unspecified but could be used to provide additional information about the data and improve the value of it.  
-
-The property \textit{dct:spatial} was changed the most. This includes three changes for the class \textit{Dataset} and one in the class \textit{Catalogue}. Unlike most property changes in section 3.2.1, the changes for \textit{dct:spatial} vary between the different national extensions. Two extensions changed \textit{dct:license} in the class \textit{Dataset} and one change was made in the class \textit{Distribution} and \textit{Catalogue}. The changes of \textit{dct:license} and \textit{dct:spatial} will be  further discussed in Section 5. 
-
-The property \textit{dct:identifier} was changed once in the class \textit{Agent} and \textit{Catalogue}. The property \textit{dct:subject} was changed in three extensions, and all changes took place in the class \textit{Dataset}. The \textit{vCard:hasTelephone} property was changed two times for the class \textit{Organization} and once for the class \textit{vCard:Contact}. Moreover, for the class \textit{Dataset}, \textit{dct:creator} was changed two times, while the class \textit{Distribution} has three. The class \textit{Standard} one change for the property \textit{dct:description}.
-
-Besides the changes mentioned above, there are additionally sixty-three other recommended and optional properties that were changed. Since all the changes took place in only one of the analysed extensions, we will not discuss them any further.
-
-\subsubsection{Exclusion of Recommended and Optional properties}
-
-In some cases, the exclusion of a recommended or optional property is a valid option to improve the national extension of the DCAT-AP version. That is the case of DCAT-AP\_IT, DCAT-AP-NL and DCAT-AP-NO which have excluded such properties.
-
-The Italian extension DCAT-AP\_IT has the most exclusions. For the class \textit{Distribution} the recommended or optional properties \textit{spdx:checksum, foaf:page, dct:language, dct:conformsTo, dct:rights, adms:status,dct:issued} and \\ \textit{dcat:mediaType } were excluded. In the class \textit{Dataset} \textit{dct:relation}, \textit{dct:source}, \textit{dct:accessRights}, \textit{dct:provenance}, \textit{foaf:page}, \textit{dct:hasVersion}, \textit{adms:sample}, \textit{dct:type}, and \textit{adms:versionNotes} were excluded. Moreover, in the class \textit{Catalogue}, the properties \textit{hasPart, isPartOf, dcat:record, dct:spatial, dct:license, and dct:rights} are not included in the extension any more. In addition \textit{dct:type} is excluded for the class \textit{Agent}.
-
-DCAT-AP-NL and DCAT-AP-NO only excluded properties for the class \textit{Distribution}, where DCAT-AP-NO excluded the \textit{mediaType} and DCAT-AP-NL the \textit{license}, \textit{conformsTo, language, page, checksum, type, } and \textit{rights} properties.
-
-\subsection{Analysis of the use of properties}
-In this section, we present the result from measuring the use of properties of the \textit{Catalog}, \textit{Dataset}, and \textit{Distribution} classes in the selected national portals. As mentioned, we selected portals with a national profile and where a data dump in a standard RDF format was available. Using these criteria, we ended up with the national portals of Ireland, Norway, Spain, Sweden, and Switzerland. None of these countries use the \textit{CatalogRecord} class. As mentioned, we show charts for properties which were used by at least one portal on at least 10\% of the instances. However, all obligated and recommended properties matching these criteria are included in the charts. We give a short overview of the missing properties, since some of the portals rarely used them.
-
-\subsubsection{Property use in the class Catalog}
-Here on, we present different charts in order to show the specific use of the properties in the class \textit{Catalog}, this for every analysed extension.
-As a reference, the colour code used for the countries is express on Figure 14.
-
-\begin{figure}[H]
-\includegraphics{replace3.png}
-\caption{Colour code for the countries}
-\end{figure}
-
-\begin{figure}[H]
-\begin{tikzpicture}
-  \begin{axis}[
-    default style,
-    yticklabels={{dct:dataset}, {dct:description}, {dct:publisher}, {dct:title}}
-    ]
-    \addplot[switzerland] coordinates { (100,0) (0,1) (0,2) (0,3)};
-    \addplot[sweden] coordinates { (0,0) (0,1) (0,2) (0,3)};
-    \addplot[spain] coordinates { (100,0) (100,1) (100,2) (100,3)};
-    \addplot[norway] coordinates { (100,0) (100,1) (100,2) (100,3)};
-    \addplot[ireland] coordinates { (100,0) (0,1) (0,2) (100,3)};
-  \end{axis}
-\end{tikzpicture}
-\caption{Mandatory properties in the Catalog class}
-\end{figure}
-
-\begin{figure}[H]
-\begin{tikzpicture}
-  \begin{axis}[
-    default style,
-    yticklabels={{foaf:modified},{dct:themeTaxonomy},{dct:issued}, {dct:license}, {dcat:language}, {dct:homepage}}
-    ]
-    \addplot[switzerland] coordinates { (0,0) (0,1) (0,2) (0,3) (0,4) (0,5)};
-    \addplot[sweden] coordinates { (0,0) (0,1) (0,2) (0,3) (0,4) (0,5)};
-    \addplot[spain] coordinates { (100,0) (100,1) (100,2) (100,3) (100,4) (100,5)};
-    \addplot[norway] coordinates { (100,0) (100,1) (0,2) (0,3) (0,4) (100,5)};
-    \addplot[ireland] coordinates { (100,0) (0,1) (0,2) (0,3) (100,4) (100,5)};
-  \end{axis}
-\end{tikzpicture}
-\caption{Recommended properties in the Catalog class}
-\end{figure}
-
-\begin{figure}[H]
-\includegraphics{Replace6.png}
-\caption{Optional properties in the Catalog class}
-\end{figure}
-
-We observed that for the class \textit{Catalog} all properties were frequently used, as shown in Figure 15 and 16 respectively. However, \textit{dct:hasPart,dct:isPartOf, dcat:record, dct:rights} and \textit{dct:spatial} were not used at all, as exhibited on Figure 17.
-
-\subsubsection{Property use in the class Dataset}
-
-\begin{figure}[H]
-\includegraphics{replace7.png}
-\caption{Mandatory properties in the Dataset class}
-\end{figure}
-
-\begin{figure}[H]
-\includegraphics{replace8.png}
-\caption{Recommended properties in the Dataset class}
-\end{figure}
-
-\begin{figure}[H]
-\includegraphics{replace9.png}
-\includegraphics{replace10.png}
-\includegraphics{replace11.png}
-\caption{Optional properties in the Dataset class}
-\end{figure}
-
-% Check the images related to descriptions: I don't understand the relation between the text and the images presented from section 4.3.1 to 4.3.3 -- Lina
-
-The property \textit{dct:conformsTo} occurred rarely in the Spanish and Swiss data dumps. Moreover, the Swedish data dump was the only one, that used \textit{dct:isVersionOf, dct:provenance, owl:versionInfo} and \textit{adms:versionNotes}. On the other hand, the properties  \textit{dct:hasVersion, adms:sample, dct:type} were not used at all.
-
-\subsubsection{Property use in the class Distribution}
-
-\begin{figure}[H]
-\includegraphics{replace12.png}
-\caption{Mandatory properties in the Distribution class}
-\end{figure}
-
-\begin{figure}[H]
-\includegraphics{replace13.png}
-\caption{Recommended properties in the Distribution class}
-\end{figure}
-
-\begin{figure}[H]
-\includegraphics{replace14.png}
-\includegraphics{replace15.png}
-\caption{Optional properties in the Distribution class}
-\end{figure}
-
-For the class \textit{Distribution}, \textit{spdx:checksum}, \textit{adms:status} were used by none of the portals. Furthemore, the property \textit{foaf:page} rarely occurred in the Swedish data dump.
-
-\section{Discussion}
+\section{Discussion old}
 We organise the discussion part based on the major findings we had from our analysis. More specifically we discuss the language support, the licensing metadata, the identified non-conformant changes, coverage for geospatial properties, and the relationship properties between Catalogues, Datasets, and Distributions.
 
 \todo[inline]{Add some discussion that the changes are not that `national'}
