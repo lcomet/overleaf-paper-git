@@ -7,10 +7,11 @@
 \usepackage[table]{xcolor}
 \usepackage{float}
 \usepackage{todonotes}
+\usepackage{pgfplots}
+
 
 \usepackage{hyperref}
-
-\usepackage{pgfplots}
+\usepackage{cleveref}
 
 \pgfplotsset{compat=1.13,
 stacked style/.style = {
@@ -143,6 +144,12 @@ In the current work, we investigate the way in which DCAT- AP specification is p
 This paper is structured as follows: in the next section we present the methodology used for collecting the data for this study. Then in section 3 we describe our findings for national portals. In section 4, we detail our findings for the European Data Portal. Later, in section 5 we discuss the findings, and at last in section 6 we present our conclusions. 
 
 Additionally, it is also important to mention that part of this  work was published earlier as a technical report.\footnote{\href{https://joinup.ec.europa.eu/document/national-extensions-analysis-dcat-ap}{https://joinup.ec.europa.eu/document/national-extensions-analysis-dcat-ap}}
+\subsection{Background}
+
+\todo[inline]{Introduction to DCAT}
+
+\subsection{Scope}
+\todo[inline]{includes background + related work + related standards}
 
 \section{Methodology}
 To analyse the DCAT-AP use and needs in Europe, we studied two aspects. In the first part, we checked the modelling work which has been done by looking into the different created national extensions; the so-called national profiles. Furthermore, we analysed how the corresponding data portals publish their metadata using these profiles. In connection with this, in the second part, we investigated the real use of DCAT-AP properties and classes on the European Data Portal, which is in charge of collecting (i.e., harvests) the metadata from national portals in order to improve the accessibility and increase the value of Open Data.\footnote{\href{https://www.europeandataportal.eu/en/what-we-do/our-activities}{About the European Data Portal}}
@@ -240,6 +247,7 @@ For the second check, the DCAT-AP validator\footnote{\href{ http://dcat-ap.semic
 Before going to the details of our analysis, we present here a general overview of DCAT-AP in order to have a better understanding of the underlying specification. For this effect, we include the DCAT-AP UML diagram showing the complete structure of its classes and corresponding properties.
 
 \begin{figure}[H]
+\todo[inline]{rotate the figure and make a colorized version for 4.2.1-4.2.3}
 \includegraphics[width=1\textwidth]{DCAT-AP_Final_v1_00.png}
 1\caption[Caption for LOC]{\footnote{\href{DCAT-AP UML Class Diagram}{https://joinup.ec.europa.eu/release/dcat-application-profile-data-portals-europe-final}}}
 \end{figure}
@@ -843,6 +851,8 @@ For the class \textit{Distribution}, \textit{spdx:checksum}, \textit{adms:status
 
 \section{Discussion}
 We organise the discussion part based on the major findings we had from our analysis. More specifically we discuss the language support, the licensing metadata, the identified non-conformant changes, coverage for geospatial properties, and the relationship properties between Catalogues, Datasets, and Distributions.
+
+\todo[inline]{Add some discussion that the changes are not that `national'}
 
 \subsection{Language}
 Some national extensions provide multi language support. In particular, Switzerland extension has added xml:lang attribute, to support multilingual elements. The example shown in Figure 2 shows the use aforementioned attribute. This example is taken from Switzerland National DCAT-AP website.
