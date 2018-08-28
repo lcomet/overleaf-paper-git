@@ -254,7 +254,7 @@ The collection of data was performed on 10/10/2017 following the methodology des
 \todo[inline]{MC: I have eagerly replaced all bold titles by `subsubsection'. If this is overkill, they can be replaced by `subsubsection*' Adding the * will remove the section number.}
 \subsubsection{dcat:Catalog}
 
-In DCAT-AP, a \textit{catalogue} is defined as a \textit{‘repository that hosts the datasets being described’}. The use of its mandatory, recommended and optional properties appear in the figures 13 to 15.
+In DCAT-AP, a \textit{catalogue} is defined as a \textit{‘repository that hosts the datasets being described’}. The use of its mandatory, recommended and optional properties appear in the figures 3 to 5.
 
 \begin{figure}[H]
 \begin{tikzpicture}
@@ -296,19 +296,19 @@ In DCAT-AP, a \textit{catalogue} is defined as a \textit{‘repository that host
 \caption{Use of optional properties of the class Catalog in the EDP}
 \end{figure}
 
-As shown in figure 18, the mandatory properties for the \textit{dcat:Catalog} class are respected in almost all cases. From the 3 catalogues with no dct:publisher attributed, 2  have in practice an organisation specified as publisher.
+As shown in figure 3, the mandatory properties for the \textit{dcat:Catalog} class are respected in almost all cases. From the 3 catalogues with no dct:publisher attributed, 2  have in practice an organisation specified as publisher.
 
 The recommended properties, dcat:themeTaxonomy and dct:modified were present in 100\% of the cases, meaning that all the catalogues queried specify at least one theme and a date. The EDP populates these two properties by default:
 \begin{itemize}
-\item for the theme taxonomy, by using the MDR data themes NAL or a mapping of the data themes harvested to the MDR data themes NAL\footnote{\href{http://publications.europa.eu/mdr/authority/data-theme/index.html}{ http://publications.europa.eu/mdr/authority/data-theme/index.html}}, as recommended in ‘How to use the MDR data themes vocabulary’\footnote{\href{https://joinup.ec.europa.eu/release/dcat-ap-how-use-mdr-data-themes-vocabulary}{  https://joinup.ec.europa.eu/release/dcat-ap-how-use-mdr-data-themes-vocabulary }}; and
+\item for the theme taxonomy, by using the MDR data themes NAL or a mapping of the data themes harvested to the MDR data themes NAL\footnote{\href{http://publications.europa.eu/mdr/authority/data-theme/index.html}{ http://publications.europa.eu/mdr/authority/data-theme/index.html}}, as recommended in \textit{`How to use the MDR data themes vocabulary'}\footnote{\href{https://joinup.ec.europa.eu/release/dcat-ap-how-use-mdr-data-themes-vocabulary}{  https://joinup.ec.europa.eu/release/dcat-ap-how-use-mdr-data-themes-vocabulary }}; and
 \item for the modified date, as the latest harvested date of each catalogue by the EDP.
 \end{itemize}
-Note that this means that even in case national portals do not specify these properties, which happens as we observed in the analysis reported in section \ref{NationalExtensions}, the EDP will present a value. Almost all the catalogues (98.75\%) provide the first harvested date with the property dct:issued, and 23.75\% of the catalogues include a homepage. 
+Note that this means that even in case national portals do not specify these properties, which happens as we observed in the analysis reported in section \ref{NationalExtensions}, the EDP will present a value. Almost all the catalogues (98.75\%) provide the first harvested date with the property \textit{dct:issued}, and 23.75\% of the catalogues include a homepage. 
 An important observation concerning the use of the recommended properties \textit{dct:license} and \textit{dct:language} is that no catalogue specified any of the two properties. The observation on the licence is not in contradiction with the usage note of the property \textit{dct:license} on \textit{dcat:Catalog}. The licence attribute on a catalogue refers to the licence of the catalogue itself, not of the individual datasets nor distributions.\footnote{\href{https://www.w3.org/TR/vocab-dcat/\#class-catalog}{https://www.w3.org/TR/vocab-dcat/\#class-catalog}} 
 
 \subsubsection{dcat:Dataset}
 
-Figures 16 and 17 present the use of mandatory and recommended properties on the \textit{dcat:Dataset} class. The findings are further described below the figures.
+Figures 6 and 7 present the use of mandatory and recommended properties on the \textit{dcat:Dataset} class. The findings are further described below the figures.
 \begin{figure}[H]
 \begin{tikzpicture}
   \begin{axis}[
@@ -336,21 +336,21 @@ Figures 16 and 17 present the use of mandatory and recommended properties on the
 \end{figure}
 
 
-\subsubsection{dct:description not 100\% used}
-\textit{dct:description} is a mandatory property, yet it is not used on all datasets. As titles for datasets are often not self-explanatory, which is the case for many of these  26.328 data sets without description, portal owners are encouraged to complete the use of descriptions to improve the understanding and the discoverability of the datasets.
+\subsubsection*{dct:description not 100\% used}
+\textit{dct:description} is a mandatory property, yet it is not used on all datasets. As titles for datasets are often not self-explanatory, which is the case for many of these  26.328 data sets without description. Portal owners are encouraged to complete the use of descriptions to improve the understanding and the discoverability of the datasets.
 
-\subsubsection{Relationship between Dataset and Distribution}
+\subsubsection*{Relationship between Dataset and Distribution}
 Since a dataset can have several distributions, for example a distribution in CSV format and one in XML, it was expected that the number of distributions (932.771) is higher than the number of datasets (743.000). The analysis however shows that not all datasets have a distribution. This can be explained by the fact that there are other ways to access the data, for example via \textit{dcat:landingPage} (38.42\%) or \textit{foaf:page} (10.31\%), which is often used for geospatial datasets that are accessed through web APIs, such as map services.  We also verified that data publishers were not using multiple properties (distribution, landing page and/or page) for the same dataset. The only overlapping use is really minor as it only concerns 17 datasets having at the same time a \textit{dct:landingPage} and a \textit{foaf:page}.
 
-\subsubsection{Relationship between dct:publisher and dcat:contactPoint}
+\subsubsection*{Relationship between dct:publisher and dcat:contactPoint}
 In the guideline \textit{‘How are publisher and contact point modelled?’}\footnote{\href{ https://joinup.ec.europa.eu/release/how-are-publisher-and-contact-point-modelled }{ https://joinup.ec.europa.eu/release/how-are-publisher-and-contact-point-modelled }}, the following recommendation is made:
 \textit{‘The way that DCAT and DCAT-AP distinguish between the publisher (the organisation that makes the catalogue or dataset available) and contact information (address where more information can be requested, or feedback can be given) is a continuing source of confusion. It is important to differentiate and provide the two types of information: Publisher is necessary to identify the entity and Contact point allows any person/organisation to communicate and provide feedback.’}
 
-As visualised in figure 17, the two properties \textit{dct:publisher} and \textit{dcat:contactPoint} have approximately the same frequency of use. When analysing more in details if the use of the two properties is aligned with the guideline, we found that among the 38.672 datasets which have both properties defined: 34\% (13.133) have a different publisher than the contact point and 66\% (25.539) duplicate the information from \textit{dct:publisher} to \textit{dcat:contactPoint}, as specified in the guideline.
+As visualised in figure 7, the two properties \textit{dct:publisher} and \textit{dcat:contactPoint} have approximately the same frequency of use. When analysing more in details if the use of the two properties is aligned with the guideline, we found that among the 38.672 datasets which have both properties defined: 34\% (13.133) have a different publisher than the contact point and 66\% (25.539) duplicate the information from \textit{dct:publisher} to \textit{dcat:contactPoint}, as specified in the guideline.
 
-\subsubsection{Optional properties on dcat:Dataset}
+\subsubsection*{Optional properties on dcat:Dataset}
 
-Figure 18 introduces the use of optional properties for the Dataset class. The results are further described in the paragraphs below.
+Figure 8 introduces the use of optional properties for the Dataset class. The results are further described in the paragraphs below.
 \\
 \begin{figure}[H]
 \begin{tikzpicture}
@@ -384,10 +384,10 @@ Figure 18 introduces the use of optional properties for the Dataset class. The r
 \caption{Use of optional properties of the class Dataset in the EDP}
 \end{figure}
 
-\subsubsection{Use of dct:identifier and adms:identifier}
+\subsubsection*{Use of dct:identifier and adms:identifier}
 DCAT-AP foresees two optional properties for identifying a dataset, \textit{dct:identifier} and \textit{adms:identifier}. While the first one is described as the main unique identifier, e.g. a URI, the second property is provided as a secondary identifier. In practice, the second is used in 100\% of the cases by the EDP itself while the first is in some cases provided by the catalogue of datasets harvested. In most of the cases assessed, the \textit{dct:identifier} follows the same format as the \textit{adms:identifier}. This tends to confirm that the EDP provides a \textit{dct:identifier} and a dataset URI for all the datasets which do not have one already.
 
-\subsubsection{Use of dct:spatial}
+\subsubsection*{Use of dct:spatial}
 DCAT-AP mandates to use controlled vocabularies for the property \textit{dct:spatial}. The list of controlled vocabularies is:
 
 \begin{itemize}
@@ -443,7 +443,7 @@ A similar query was run for the class \textit{dcat:Catalog}. The spatial propert
 \caption{Use of dct:spatial for the class dcat:Catalog}
 \end{longtable}
 
-\subsubsection{Use of dct:accrualPeriodicity}
+\subsubsection*{Use of dct:accrualPeriodicity}
 The property \textit{dct:accrualPeriodicity} indicates the frequency at which a dataset updated by its owner. From the different periodicities with their use, the most used frequencies are visualised in Figure 19. One important point to notice concerns the quantity of duplicated frequencies, e.g. IRREG and IRREGULAR. For example, some datasets are described using the authority code (i.e. IRREG) provided by the frequency authority list from the Publications Office\footnote{\href{http://publications.europa.eu/mdr/resource/authority/frequency/html/frequencies-eng.html }{ http://publications.europa.eu/mdr/resource/authority/frequency/html/frequencies-eng.html }} while other datasets use the label from the same authority list (i.e. IRREGULAR). 
 \\
 \\
