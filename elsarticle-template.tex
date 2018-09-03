@@ -157,14 +157,14 @@ To analyse the DCAT-AP use and needs in Europe, we studied two aspects. In the f
 \subsection{Analysis of National Extensions}
 In the first part of the analysis we present the detail information about the analysis of the national extensions. More specifically, we review the changes proposed in the formal specification of national profiles. After that, in the second part, we examine the actual use of these extensions.
 
-Regarding the collection of formal specifications, we manually found and collected them from the National DCAT-AP portals shown in Table 1: National DCAT-AP profiles. This had to be done manually as for many portals no directly exportable data formats were available, e.g., a schema file. Moreover, we noticed that even when a formal specification is available as an OWL ontology, there may be still more restrictions in the textual specification. Some of these inconsistencies appear due to limitations in the expressive power of OWL.
+Regarding the collection of formal specifications, we manually found and collected them from the National DCAT-AP portals shown in Table \ref{NationalProfiles}: National DCAT-AP profiles. This had to be done manually as for many portals no directly exportable data formats were available, e.g., a schema file. Moreover, we noticed that even when a formal specification is available as an OWL ontology, there may be still more restrictions in the textual specification. Some of these inconsistencies appear due to limitations in the expressive power of OWL.
 Another finding is that even though some countries maintain a list of updated, added and deleted properties to DCAT-AP, others have added additional properties or made updates to the standard DCAT-AP, but did not explicitly document the changes. As a consequence, the change identification was a rather tedious task. 
 
 As a result of our investigation, we created an analysis report by comparing each class and property from the national profiles with the usage notes, cardinality, and status (optional, recommended, or mandatory) in DCAT-AP. Moreover, from this change analysis report, we identified updates in properties’ ranges as well as the removal of properties and classes.
 
 Before presenting the overall statistics on the property updates, we present a brief overview of the identified changes per country. In this context, we also identify and comment properties updated in many extensions, for example language, licensing, media types, and format. Furthermore, we also inspect whether updates are in accordance with the DCAT-AP extension rules. As for the non-compliant updates, we discussed them in part 5.4.
 
-In the table below, we show the list of the application profiles from the national portal. Particularly, they were chosen to be included in our analysis by the fact they have published to DCAT-AP specification. 
+In the Table \ref{NationalProfiles}, we show the list of the application profiles from the national portal. Particularly, they were chosen to be included in our analysis by the fact they have published to DCAT-AP specification. 
 \\
 \\
 \\
@@ -192,6 +192,7 @@ In the table below, we show the list of the application profiles from the nation
 	Switzerland - Open Government Data Switzerland, \\Web Address: \url{ https://handbook.opendata.swiss/en/library/ch-dcat-ap},\\ Version/Update Date: 2016-02-09 \\ \hline
 
 \caption{National DCAT-AP profiles}
+\label{NationalProfiles}
 \end{longtabu}
 
 Afterwards, we analysed the actual use of DCAT-AP in these portals. This proved more difficult than anticipated. The main reason of the difficulty was that some of these portals do not provide their metadata in any of the standardized RDF serialization formats, but rather in either a platform specific or own customized format. We consider this fact as an interesting finding. As we focus on interoperability, we decided to only analyse the portals which provide their metadata in a standardized way. That was the case for Ireland, Norway, Spain, Sweden, and Switzerland.
@@ -200,7 +201,7 @@ For these countries, we downloaded the available metadata and measured how often
 
 \subsection{Analysis of DCAT-AP use via the European Data Portal}
 
-In order to analyse the real use of DCAT-AP classes and properties on the European data Portal (EDP), SPARQL queries were developed and executed on its SPARQL endpoint i.e. \url{https://www.europeandataportal.eu/sparql}. Given the high number of properties to analyse, the creation of queries was semi-automated using a spreadsheet \footnote{The spreadsheet with queries and results is available at  \url{https://joinup.ec.europa.eu/sites/default/files/document/2018-04/SPARQL\%20query\%20results\%20from\%20the\%20European\%20Data\%20Portal.xlsx}}. Moreover, the queries were also transformed into URLs and results were automatically loaded, as shown in Fig.1. The queries can be used to monitor the DCAT-AP use or similar models on every portal that has a SPARQL endpoint.
+In order to analyse the real use of DCAT-AP classes and properties on the European data Portal (EDP), SPARQL queries were developed and executed on its SPARQL endpoint i.e. \url{https://www.europeandataportal.eu/sparql}. Given the high number of properties to analyse, the creation of queries was semi-automated using a spreadsheet \footnote{The spreadsheet with queries and results is available at  \url{https://joinup.ec.europa.eu/sites/default/files/document/2018-04/SPARQL\%20query\%20results\%20from\%20the\%20European\%20Data\%20Portal.xlsx}}. Moreover, the queries were also transformed into URLs and results were automatically loaded, as shown in Figure \ref{SPARQLQueries}. The queries can be used to monitor the DCAT-AP use or similar models on every portal that has a SPARQL endpoint.
 
 In the example below, we answer to the question ‘how many datasets have a description?’:
 \\
@@ -221,6 +222,7 @@ WHERE {
 \begin{figure}[H]
 \includegraphics[]{replace1.png}
 \caption{SPARQL queries for DCAT-AP}
+\label{SPARQLQueries}
 \end{figure}
 
 The European Data Portal harvests the metadata from data portals in Europe. These data portals use DCAT-AP in different ways: some are not using DCAT-AP at all, some follow a national DCAT-AP profile and some claim to be fully-compliant with DCAT-AP. In this respect, the EDP maps these varied uses of DCAT-AP to their own use of DCAT-AP, adding new properties on top of the mappings such as properties under the class \textit{dcat:CatalogRecord}. Indeed, these mappings and additions influence the analysis conducted in this part of the study. Hence, by querying the EDP endpoint, this analysis assesses only partially the use of DCAT-AP for all data portals harvested by the EDP, as some properties and values from national portals might not be harvested.
@@ -450,7 +452,7 @@ The 4 properties not used on the EDP are not analysed in this chapter but have d
 \item dct:language for the class \textit{dcat:Catalog}. This recommended property is not used for the class \textit{Catalog} on the EDP.
 \end{itemize}
 
-We analysed the 11 properties present on the EDP, marked with “Yes” in Table \ref{ControlledVocsOnEDPTable}, the results of which are summarised in Table 5 and further discussed in the paragraphs below. Automated analyses were conducted for 9 out of the 11 properties with the help of the DCAT-AP validator\footnote{\href{  http://dcat-ap.semic.eu/dcat-ap\_validator.html }{    http://dcat-ap.semic.eu/dcat-ap\_validator.html}}. The dct:publisher property for classes \textit{dcat:Dataset} and \textit{dcat:Catalog} was analysed manually. 
+We analysed the 11 properties present on the EDP, marked with “Yes” in Table \ref{ControlledVocsOnEDPTable}, the results of which are summarised in Table \ref{ControlledVocsErrors} and further discussed in the paragraphs below. Automated analyses were conducted for 9 out of the 11 properties with the help of the DCAT-AP validator\footnote{\href{  http://dcat-ap.semic.eu/dcat-ap\_validator.html }{    http://dcat-ap.semic.eu/dcat-ap\_validator.html}}. The dct:publisher property for classes \textit{dcat:Dataset} and \textit{dcat:Catalog} was analysed manually. 
 Table \ref{ControlledVocsErrors} summarises the findings for the different properties supposedly using controlled vocabularies. An error is recorded when an instance that is supposed to refer to a controlled vocabulary, is not referring or is wrongly referring to its controlled vocabulary.
 
 \begin{longtable}{*8l}
@@ -478,7 +480,7 @@ Table \ref{ControlledVocsErrors} summarises the findings for the different prope
 DCAT-AP v1.1 covers a basic set of properties and classes for online metadata exchange. Yet, to fulfil specific national needs that are not covered by the basic set of properties and classes, DCAT- AP can be extended without losing its compatibility to other DCAT-AP extensions. This extension can include changes, additions or removals in cardinality, classes and properties. Therefore, it is common for extensions to introduce new mandatory properties or move properties from the set of recommended to the set of optional ones. Along with that, extensions can include restrictions by adding cardinality, language and range constraints or even restricting semantics.
 
 \subsubsection{Analysed DCAT-AP extensions}
-The analysis includes the national DCAT-AP extensions for Belgium, Germany, Ireland, Italy, the Netherlands, Norway, Spain, Sweden and Switzerland, as detailed in Table 1. Moreover, in Fig. 2 is shown the map of analysed countries, where the darker colour indicates the existence of more changes for the national application profiles. 
+The analysis includes the national DCAT-AP extensions for Belgium, Germany, Ireland, Italy, the Netherlands, Norway, Spain, Sweden and Switzerland, as detailed in Table \ref{NationalProfiles}. Moreover, in Figure \ref{CountriesNationalProfile} is shown the map of analysed countries, where the darker colour indicates the existence of more changes for the national application profiles. 
 
 \begin{figure}[H]
 \includegraphics{replace2.png}
@@ -711,7 +713,7 @@ The guideline \textit{‘How should dct:spatial and dct:Location be used?’}\fo
 \caption{Use of dct:spatial for dcat:Dataset}\label{dct:spatialDatasetTable}
 \end{longtable}
 
-A similar query was run for the class \textit{dcat:Catalog}. The optional \textit{dct:spatial} property is used by 33 countries as shown in Table \ref{dct:spatialCatalogTable}.
+A similar query was run for the class \textit{dcat:Catalog}. The optional \textit{dct:spatial} property is used with 33 countries as shown in Table \ref{dct:spatialCatalogTable}.
 
 \begin{longtable}{*8l}
 \rowcolor{blue!90}
