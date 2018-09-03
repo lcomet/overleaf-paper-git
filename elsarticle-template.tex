@@ -483,6 +483,7 @@ The analysis includes the national DCAT-AP extensions for Belgium, Germany, Irel
 \begin{figure}[H]
 \includegraphics{replace2.png}
 \caption{Countries with a national profile based on DCAT-AP. A darker colour indicates more extensive modifications and additions to DCAT-AP.}
+\label{CountriesNationalProfile}
 \end{figure}
 
 In order to better explain the changes made by the national profiles, we briefly describe and highlight below significant changes of each extension.
@@ -550,11 +551,12 @@ In this section, we present the result from measuring the use of properties of t
 
 \subsubsection*{Property use in the class Catalog}
 Here on, we present different charts in order to show the specific use of the properties in the class \textit{Catalog}, this for every analysed extension.
-As a reference, the colour code used for the countries is express on Figure 14.
+As a reference, the colour code used for the countries is express on Figure \ref{ColourCode}.
 
 \begin{figure}[H]
 \includegraphics{replace3.png}
 \caption{Colour code for the countries}
+\label{ColourCode}
 \end{figure}
 
 \begin{figure}[H]
@@ -571,6 +573,7 @@ As a reference, the colour code used for the countries is express on Figure 14.
   \end{axis}
 \end{tikzpicture}
 \caption{Mandatory properties in the Catalog class}
+\label{MandatoryCatalog}
 \end{figure}
 
 \begin{figure}[H]
@@ -587,14 +590,16 @@ As a reference, the colour code used for the countries is express on Figure 14.
   \end{axis}
 \end{tikzpicture}
 \caption{Recommended properties in the Catalog class}
+\label{RecommendedCatalog}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics{Replace6.png}
 \caption{Optional properties in the Catalog class}
+\label{OptionalCatalog}
 \end{figure}
 
-We observed that for the class \textit{Catalog} all properties were frequently used, as shown in Figure 15 and 16 respectively. However, \textit{dct:hasPart,dct:isPartOf, dcat:record, dct:rights} and \textit{dct:spatial} were not used at all, as exhibited on Figure 17.
+We observed that for the class \textit{Catalog} all properties were frequently used, as shown in Figure \ref{MandatoryCatalog} and \ref{RecommendedCatalog} respectively. However, \textit{dct:hasPart,dct:isPartOf, dcat:record, dct:rights} and \textit{dct:spatial} were not used at all, as exhibited on Figure \ref{OptionalCatalog}.
 
 \subsubsection*{Property use in the class Dataset}
 
@@ -854,7 +859,7 @@ We organise the discussion part based on the major findings we had from our anal
 \todo[inline]{Add some discussion that the changes are not that `national'}
 
 \subsection{Language}
-Some national extensions provide multi language support. In particular, Switzerland extension has added xml:lang attribute, to support multilingual elements. The example shown in Figure 2 shows the use aforementioned attribute. This example is taken from Switzerland National DCAT-AP website.
+Some national extensions provide multi language support. In particular, Switzerland extension has added xml:lang attribute, to support multilingual elements. The example shown in \ref{CountriesNationalProfile} shows the use aforementioned attribute. This example is taken from Switzerland National DCAT-AP website.
 
 \begin{figure}[H]
 \includegraphics{replace26.png}
